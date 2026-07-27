@@ -688,7 +688,7 @@
     .yoga-symbol-1 {
       background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
       border-radius: 50%;
-      box-shadow: 0 5px 20px rgba(143, 60, 18, 0.2);
+      box-shadow: 0 5px 10px ;
       animation: float 4s ease-in-out infinite;
       max-height: 70%;
       max-width: 60%;
@@ -778,7 +778,7 @@
       width: 30px;
       height: 30px;
       border-radius: var(--radius-sm);
-      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
+      /* background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber)); */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1047,6 +1047,205 @@
       background: linear-gradient(90deg, var(--clr-amber), var(--clr-amber));
     }
 
+    /* Card Selection Row */
+    .card-selection-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: auto;
+      margin-bottom: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(171, 128, 58, 0.15);
+    }
+
+    .service-card.featured .card-selection-row {
+      border-top: 1px solid rgba(246, 245, 240, 0.12);
+    }
+
+    .card-days-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1.1;
+    }
+
+    .card-input-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+    }
+
+    .service-card.featured .card-input-label {
+      color: rgba(246, 245, 240, 0.6);
+    }
+
+    .card-day-options {
+      display: flex;
+      gap: 0.4rem;
+      width: 100%;
+    }
+
+    .card-day-pill {
+      flex: 1;
+      padding: 0.45rem 0.2rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-align: center;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(171, 128, 58, 0.3);
+      background: transparent;
+      color: var(--clr-text);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .service-card.featured .card-day-pill {
+      border-color: rgba(246, 245, 240, 0.3);
+      color: var(--clr-cream);
+    }
+
+    .card-day-pill:hover {
+      border-color: var(--clr-terracotta);
+      color: var(--clr-terracotta);
+    }
+
+    .service-card.featured .card-day-pill:hover {
+      border-color: var(--clr-amber);
+      color: var(--clr-amber);
+    }
+
+    .card-day-pill.selected {
+      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
+      border-color: transparent;
+      color: var(--clr-white);
+      box-shadow: 0 3px 10px rgba(156, 68, 25, 0.2);
+    }
+
+    .service-card.featured .card-day-pill.selected {
+      background: linear-gradient(135deg, var(--clr-amber), #e8880f);
+      box-shadow: 0 3px 10px rgba(219, 113, 27, 0.25);
+    }
+
+    .card-timing-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1.2;
+    }
+
+    .card-timing-select {
+      width: 100%;
+      padding: 0.45rem 0.5rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(171, 128, 58, 0.3);
+      background: var(--clr-white);
+      color: var(--clr-text);
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .service-card.featured .card-timing-select {
+      border-color: rgba(246, 245, 240, 0.3);
+      background: var(--clr-dark-2);
+      color: var(--clr-cream);
+    }
+
+    .card-timing-select:focus,
+    .card-timing-select:hover {
+      border-color: var(--clr-terracotta);
+    }
+
+    .service-card.featured .card-timing-select:focus,
+    .service-card.featured .card-timing-select:hover {
+      border-color: var(--clr-amber);
+    }
+
+    .card-buttons-row {
+      display: flex;
+      gap: 0.6rem;
+      width: 100%;
+    }
+
+    .btn-card-details {
+      flex: 1;
+      padding: 0.6rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      border: 1.5px solid var(--clr-terracotta);
+      color: var(--clr-terracotta);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .service-card.featured .btn-card-details {
+      border-color: var(--clr-amber);
+      color: var(--clr-amber);
+    }
+
+    .btn-card-details:hover {
+      background: var(--clr-terracotta);
+      color: var(--clr-white);
+    }
+
+    .service-card.featured .btn-card-details:hover {
+      background: var(--clr-amber);
+      color: var(--clr-white);
+    }
+
+    .btn-card-book {
+      flex: 1.5;
+      padding: 0.6rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
+      border: none;
+      color: var(--clr-white);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(156, 68, 25, 0.15);
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .service-card.featured .btn-card-book {
+      background: linear-gradient(135deg, var(--clr-amber), #e8880f);
+      box-shadow: 0 4px 12px rgba(219, 113, 27, 0.2);
+    }
+
+    .btn-card-book:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 15px rgba(156, 68, 25, 0.3);
+    }
+
+    .service-card.featured .btn-card-book:hover {
+      box-shadow: 0 6px 15px rgba(219, 113, 27, 0.35);
+    }
+
+    @media (max-width: 991px) {
+      .card-selection-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .card-day-options {
+        justify-content: space-between;
+      }
+    }
+
     /* =============================================
        SERVICE DETAILS MODAL SYSTEM
     ============================================= */
@@ -1170,6 +1369,7 @@
       gap: 1.5rem;
     }
 
+
     .modal-section-heading {
       font-family: var(--ff-display);
       font-size: var(--fs-md);
@@ -1179,6 +1379,8 @@
     }
 
     .modal-desc-box {
+      height: 150px;
+      overflow: auto;
       font-size: var(--fs-sm);
       color: var(--clr-text-muted);
       line-height: 1.8;
@@ -1219,7 +1421,7 @@
     }
 
     .modal-footer-box {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       padding-top: 1.2rem;
       border-top: 1px solid rgba(171, 128, 58, 0.2);
     }
@@ -2400,9 +2602,9 @@
       <div class="hero-inner">
 
         <div class="hero-content">
-          <div class="hero-badge">
-            <span class="pulse">&#9679;</span> Batches Now Open &mdash; Free Trial Class Available
-          </div>
+          <!-- <div class="hero-badge">
+            <span class="pulse">&#9679;</span>  Now Open &mdash; Free Trial Class AvailableBatches
+          </div> -->
 
           <h3 class="hero-heading">
             कायाइन्द्रिय<em>सिद्धिः</em> अशुद्धिक्षयात् <em>तपसः॥</em><br />
@@ -2446,15 +2648,15 @@
 
         <div class="hero-visual">
           <div class="float-card float-card-1">
-            <div class="float-card-icon">&#129328;</div>
+            <div class="float-card-icon"><img src="Assest/facebook.webp"></div>
             <div>
-              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)">Morning Mysore</div>
-              <div style="font-size:0.68rem;color:var(--clr-text-muted)">6:00 AM &middot; Daily</div>
+              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a href="https://www.facebook.com/profile.php?id=61591786163897">Facebook</a></div>
+              <!-- <div style="font-size:0.68rem;color:var(--clr-text-muted)">6:00 AM &middot; Daily</div> -->
             </div>
           </div>
 
           <div class="hero-glass-card">
-            <img class="yoga-symbol-1" src="Assest/logo.jpg" alt="logo">
+            <img class="yoga-symbol-1" src="Assest/logo.png" alt="logo">
             <div class="hero-card-title">ADI Astanga Yoga</div>
             <div class="hero-card-sub">Awaken Absolute Bliss &mdash; Through Intense Grit</div>
             <div class="hero-pill-badges">
@@ -2466,10 +2668,10 @@
           </div>
 
           <div class="float-card float-card-2">
-            <div class="float-card-icon">&#127807;</div>
+            <div class="float-card-icon"><img src="Assest/instagram-vector-logo-icon-social-media-logotype_901408-392.avif"></div>
             <div>
-              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)">Ayurveda Consult</div>
-              <div style="font-size:0.68rem;color:var(--clr-text-muted)">Personalized &middot; Holistic</div>
+              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a href="https://www.instagram.com/adi.astanga.yoga/">Instagram</a></div>
+              <!-- <div style="font-size:0.68rem;color:var(--clr-text-muted)">Personalized &middot; Holistic</div> -->
             </div>
           </div>
         </div>
@@ -2738,189 +2940,17 @@
 
       <!-- Interactive Filter Bar -->
       <div class="class-filter-bar reveal">
-        <button class="class-filter-btn active" data-filter="all">All Classes</button>
         <button class="class-filter-btn" data-filter="sweat-sculpt">Sweat &amp; Sculpt</button>
         <button class="class-filter-btn" data-filter="rest-sound">Deep Rest &amp; Sound</button>
         <button class="class-filter-btn" data-filter="heal-restore">Heal &amp; Restore</button>
         <button class="class-filter-btn" data-filter="lifestages-corporate">Life Stages &amp; Corporate</button>
+        <button class="class-filter-btn active" data-filter="all">All Classes</button>
       </div>
 
       <div class="services-grid" id="class-catalogue-grid">
-
-        <!-- 1. Primary Ashtanga Series -->
-        <div class="service-card reveal" data-category="sweat-sculpt">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Primary Ashtanga Series</h3>
-          <p class="service-card-desc">Traditional posture sequences paired with Ujjayi breathing and Bandha locks.
-            One-on-one Mysore guidance builds endurance, internal heat, and physical mastery.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('primary-ashtanga')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 2. Dynamic Vinyasa Flow -->
-        <div class="service-card featured reveal" data-category="sweat-sculpt">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Dynamic Vinyasa Flow</h3>
-          <p class="service-card-desc">Fluid movement synchronized with breath to cultivate cardiovascular stamina and
-            agility. Seamless posture transitions build strength while maintaining a meditative focus.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('vinyasa-flow')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 3. Power & Core Yoga -->
-        <div class="service-card reveal" data-category="sweat-sculpt">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Power &amp; Core Yoga</h3>
-          <p class="service-card-desc">High-intensity posture holding focused on building abdominal stability and arm
-            balance strength. Sculpts lean muscle and elevates metabolic energy.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('power-core')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 4. Restorative Yoga -->
-        <div class="service-card featured reveal" data-category="rest-sound">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Restorative Yoga</h3>
-          <p class="service-card-desc">Fully supported floor postures using props to melt deep muscular tension. Calms
-            the sympathetic nervous system and restores deep physical energy.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('restorative')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 5. Yoga Nidra -->
-        <div class="service-card reveal" data-category="rest-sound">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Yoga Nidra</h3>
-          <p class="service-card-desc">Guided psychic sleep meditation inducing brainwave states of profound
-            rejuvenation. 30 minutes of practice equals 4 hours of natural restful sleep.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('yoga-nidra')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 6. Nada Yoga -->
-        <div class="service-card featured reveal" data-category="rest-sound">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Nada Yoga</h3>
-          <p class="service-card-desc">Harnessing sacred chants, singing bowls, and sound frequencies to clear mental
-            fog. Dissolves emotional blocks and elevates internal vibration.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('nada-yoga')">Details &rarr;</button>
-        </div>
-
-        <!-- 7. Therapeutic Yoga -->
-        <div class="service-card reveal" data-category="heal-restore">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Therapeutic Yoga</h3>
-          <p class="service-card-desc">Target specific ailments, chronic pain, and structural imbalances with customized
-            alignment. Combines gentle movements and breathwork to aid clinical recovery.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('therapeutic')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 8. Ayurvedic Alignment Yoga -->
-        <div class="service-card featured reveal" data-category="heal-restore">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Ayurvedic Alignment Yoga</h3>
-          <p class="service-card-desc">Posture practices customized according to your unique Dosha constitution (Vata,
-            Pitta, Kapha). Harmonizes bodily humors and balances vital energy.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('ayurvedic-alignment')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 9. Spine & Joint Recovery -->
-        <div class="service-card reveal" data-category="heal-restore">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Spine &amp; Joint Recovery</h3>
-          <p class="service-card-desc">Targeted low-impact postures engineered to decompress spinal vertebrae and
-            lubricate stiff joints. Relieves chronic back pain and restores alignment.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('spine-joint')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 10. Prenatal & Postnatal Yoga -->
-        <div class="service-card featured reveal" data-category="lifestages-corporate">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Prenatal &amp; Postnatal Yoga</h3>
-          <p class="service-card-desc">Safe, supportive practices for expecting and new mothers to strengthen pelvic
-            floor and ease pregnancy. Gently rebuilds core stability and maternal health.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('prenatal-postnatal')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 11. Corporate Desk Relief -->
-        <div class="service-card reveal" data-category="lifestages-corporate">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Corporate Desk Relief</h3>
-          <p class="service-card-desc">Decompress from desk strain and counteract sedentary office posture. Focuses on
-            relieving neck, shoulder, and lower back stiffness while boosting focus.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('corporate-desk')">Details
-            &rarr;</button>
-        </div>
-
-        <!-- 12. Senior & Mobility Yoga -->
-        <div class="service-card featured reveal" data-category="lifestages-corporate">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3 class="service-card-title">Senior &amp; Mobility Yoga</h3>
-          <p class="service-card-desc">Gentle joint-freeing movements and chair-supported variations to preserve
-            balance, agility, and independence. Maintains bone density in a warm setting.</p>
-          <button type="button" class="service-card-btn" onclick="openServiceModal('senior-mobility')">Details
-            &rarr;</button>
-        </div>
-
+        <!-- Dynamically rendered via JS -->
       </div>
+
     </div>
   </section>
 
@@ -2952,7 +2982,6 @@
             Loading service description...
           </div>
         </div>
-
         <div>
           <h4 class="modal-section-heading">Select Days :</h4>
           <div class="pill-group" id="modal-days-group">
@@ -3418,12 +3447,8 @@
               <label for="days">I&rsquo;M COMFORT WITH THIS DAYS</label>
               <select id="days" name="days">
                 <option value="">&mdash; Select preferred days &mdash;</option>
-                <option value="Mon - Tues">Mon - Tues</option>
-                <option value="Wed - Thu">Wed - Thu</option>
-                <option value="Fri - Sat">Fri - Sat</option>
-                <option value="Mon - Wed - Fri">Mon - Wed - Fri</option>
-                <option value="Tue - Thu - Sat">Tue - Thu - Sat</option>
-                <option value="All Days">All Days</option>
+                <option value="Mon - Fri">Mon - Fri</option>
+                <option value="Sat - Sun">Sat - Sun</option>
               </select>
               <span class="error-msg" id="days-err">Please select your preferred days.</span>
             </div>
@@ -3432,12 +3457,14 @@
               <label for="timing">I&rsquo;M COMFORT WITH THIS TIMING</label>
               <select id="timing" name="timing">
                 <option value="">&mdash; Select preferred timing &mdash;</option>
-                <option value="6 AM - 8 AM">6 AM - 8 AM</option>
-                <option value="7 AM - 8:30 AM">7 AM - 8:30 AM</option>
-                <option value="8 AM - 9:30 AM">8 AM - 9:30 AM</option>
-                <option value="5 PM - 7 PM">5 PM - 7 PM</option>
-                <option value="6 PM - 7:30 PM">6 PM - 7:30 PM</option>
-                <option value="7 PM - 8:30 PM">7 PM - 8:30 PM</option>
+                <option value="5:00am-6:00am">5:00am - 6:00am</option>
+                <option value="6:00am-7:00am">6:00am - 7:00am</option>
+                <option value="7:00am-8:00am">7:00am - 8:00am</option>
+                <option value="8:00am-9:00am">8:00am - 9:00am</option>
+                <option value="5:00pm-6:00pm">5:00pm - 6:00pm</option>
+                <option value="6:00pm-7:00pm">6:00pm - 7:00pm</option>
+                <option value="8:00pm-9:00pm">8:00pm - 9:00pm</option>
+                <option value="9:00pm-10:00pm">9:00pm - 10:00pm</option>
               </select>
               <span class="error-msg" id="timing-err">Please select your preferred timing.</span>
             </div>
@@ -3707,104 +3734,206 @@
         title: 'Primary Ashtanga Series',
         category: 'Sweat & Sculpt',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Traditional posture sequences paired with Ujjayi breathing and Bandha locks. One-on-one Mysore guidance builds endurance, internal heat, and physical mastery.',
         description: `<b>Primary Ashtanga Series:</b> Discover a transformative, moving meditation rooted in tradition. Ashtanga is a dynamic and disciplined style of yoga following a fixed sequence of postures (Yoga Chikitsa or Yoga Therapy).<br/><br/>Guided by Ujjayi breath, focused gaze (Drishti), and core stabilization (Bandhas), each movement flows seamlessly to generate internal heat, detoxify the body, and calm the mind. Perfect for practitioners seeking to build core strength, endurance, and deep physical mastery.`,
-        days: ['Mon - Tues', 'Fri - Sat'],
-        timings: ['6 AM - 8 AM', '5 PM - 7 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'vinyasa-flow': {
         title: 'Dynamic Vinyasa Flow',
         category: 'Sweat & Sculpt',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Fluid movement synchronized with breath to cultivate cardiovascular stamina and agility. Seamless posture transitions build strength while maintaining a meditative focus.',
         description: `<b>Dynamic Vinyasa Flow:</b> Experience a seamless blend of strength, balance, and rhythmic breath awareness. Dynamic Vinyasa links movement with breathing in a continuous flow, building core heat, expanding stamina, and enhancing body mobility.<br/><br/>Each class moves through creative pose sequences that energize the body while cultivating steady focus and mindfulness.`,
-        days: ['Mon - Wed - Fri', 'Tue - Thu - Sat'],
-        timings: ['7 AM - 8:30 AM', '6 PM - 7:30 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'power-core': {
         title: 'Power & Core Yoga',
         category: 'Sweat & Sculpt',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'High-intensity posture holding focused on building abdominal stability and arm balance strength. Sculpts lean muscle and elevates metabolic energy.',
         description: `<b>Power & Core Yoga:</b> Designed to challenge your muscle stamina and functional core power. This high-energy session targets deep abdominal engagement, balance inversions, posture alignment, and muscular endurance.<br/><br/>Sculpts lean muscle tone while raising metabolic vitality and mental fortitude.`,
-        days: ['Mon - Wed', 'Thu - Sat'],
-        timings: ['6:30 AM - 7:45 AM', '5:30 PM - 6:45 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'restorative': {
         title: 'Restorative Yoga',
         category: 'Deep Rest & Sound',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Fully supported floor postures using props to melt deep muscular tension. Calms the sympathetic nervous system and restores deep physical energy.',
         description: `<b>Restorative Yoga:</b> The Conscious Recharge. Fully supported floor postures using props (bolsters, blankets, blocks) to melt deep muscular tension and quiet mental stress.<br/><br/>Slows down brainwaves, balances the nervous system, and deeply restores physical and mental energy reserves.`,
-        days: ['Wed - Fri', 'Sat - Sun'],
-        timings: ['8 AM - 9:15 AM', '6:30 PM - 7:45 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'yoga-nidra': {
         title: 'Yoga Nidra',
         category: 'Deep Rest & Sound',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Guided psychic sleep meditation inducing brainwave states of profound rejuvenation. 30 minutes of practice equals 4 hours of natural restful sleep.',
         description: `<b>Yoga Nidra:</b> The Sleep of the Yogis. Guided psychic sleep meditation inducing brainwave states of profound relaxation and cellular rejuvenation.<br/><br/>Scientific studies show that 30 minutes of deep Yoga Nidra equals up to 4 hours of natural restful sleep. Ideal for anxiety relief and mental reset.`,
-        days: ['Tue - Thu', 'Sat - Sun'],
-        timings: ['7 PM - 8 PM', '8 PM - 9 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'nada-yoga': {
         title: 'Nada Yoga',
         category: 'Deep Rest & Sound',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Harnessing sacred chants, singing bowls, and sound frequencies to clear mental fog. Dissolves emotional blocks and elevates internal vibration.',
         description: `<b>Nada Yoga:</b> The Medicine of Sound. Harnessing sacred Vedic chants, singing bowls, and acoustic sound frequencies to clear mental fog and emotional tension.<br/><br/>Harmonizes cellular vibrations, quietens an overactive mind, and connects you with your innermost stillness.`,
-        days: ['Fri - Sat', 'All Days'],
-        timings: ['6 PM - 7:30 PM', '5 PM - 6:30 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'therapeutic': {
         title: 'Therapeutic Yoga',
         category: 'Heal & Restore',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Target specific ailments, chronic pain, and structural imbalances with customized alignment. Combines gentle movements and breathwork to aid clinical recovery.',
         description: `<b>Therapeutic Yoga:</b> Clinical alignment and gentle corrective movements customized to your anatomical needs. Combines soft joint movements, targeted posture holds, and healing breathwork.<br/><br/>Aids recovery from chronic pain, back strain, and structural movement limitations.`,
-        days: ['Mon - Wed - Fri', 'Tue - Thu'],
-        timings: ['9 AM - 10:15 AM', '4 PM - 5:15 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'ayurvedic-alignment': {
         title: 'Ayurvedic Alignment Yoga',
         category: 'Heal & Restore',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Posture practices customized according to your unique Dosha constitution (Vata, Pitta, Kapha). Harmonizes bodily humors and balances vital energy.',
         description: `<b>Ayurvedic Alignment Yoga:</b> Posture practices customized according to your unique Dosha constitution (Vata, Pitta, Kapha).<br/><br/>Harmonizes bodily humors, improves digestion, balances internal vital energy (Prana), and restores natural bodily intelligence through seasonal alignment.`,
-        days: ['Mon - Tues', 'Fri - Sat'],
-        timings: ['7 AM - 8:30 AM', '5:30 PM - 7 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'spine-joint': {
         title: 'Spine & Joint Recovery',
         category: 'Heal & Restore',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Targeted low-impact postures engineered to decompress spinal vertebrae and lubricate stiff joints. Relieves chronic back pain and restores alignment.',
         description: `<b>Spine & Joint Recovery:</b> Targeted low-impact postures engineered to decompress spinal vertebrae, ease lower back compression, and lubricate stiff joints.<br/><br/>Restores posture alignment, releases trapped spinal nerves, and makes daily physical movement comfortable and effortless.`,
-        days: ['Tue - Thu - Sat', 'Mon - Wed'],
-        timings: ['8:30 AM - 9:45 AM', '5 PM - 6:15 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'prenatal-postnatal': {
         title: 'Prenatal & Postnatal Yoga',
         category: 'Life Stages & Corporate',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Safe, supportive practices for expecting and new mothers to strengthen pelvic floor and ease pregnancy. Gently rebuilds core stability and maternal health.',
         description: `<b>Prenatal & Postnatal Yoga:</b> Safe, supportive, trimester-specific practices for expecting and new mothers. Focuses on pelvic floor strengthening, spinal decompression, and breath control for labor.<br/><br/>Gently rebuilds abdominal stability post-delivery and nurtures maternal physical & emotional well-being.`,
-        days: ['Mon - Wed - Fri', 'Sat - Sun'],
-        timings: ['10 AM - 11:15 AM', '4 PM - 5:15 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'corporate-desk': {
         title: 'Corporate Desk Relief',
         category: 'Life Stages & Corporate',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Decompress from desk strain and counteract sedentary office posture. Focuses on relieving neck, shoulder, and lower back stiffness while boosting focus.',
         description: `<b>Corporate Desk Relief:</b> Decompress from desk strain, forward head posture, and sedentary office habits.<br/><br/>Focuses on opening tight chest muscles, relieving neck and upper back stiffness, loosening hip flexors, and boosting mental focus during long working hours.`,
-        days: ['Mon - Fri', 'Weekend Special'],
-        timings: ['1:00 PM - 2:00 PM', '6:30 PM - 7:30 PM']
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'senior-mobility': {
         title: 'Senior & Mobility Yoga',
         category: 'Life Stages & Corporate',
         iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Gentle joint-freeing movements and chair-supported variations to preserve balance, agility, and independence. Maintains bone density in a warm setting.',
         description: `<b>Senior & Mobility Yoga:</b> Gentle joint-freeing movements and chair-supported variations to preserve body balance, bone density, and joint agility.<br/><br/>Maintains independence, boosts circulation, and promotes calm vitality in a warm, welcoming, zero-pressure environment.`,
-        days: ['Tue - Thu - Sat', 'Mon - Wed'],
-        timings: ['9:30 AM - 10:30 AM', '4:30 PM - 5:30 PM']
-      }
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
     };
 
-    /* ----- Service Modal Handlers ----- */
+    /* ----- Card Renderer ----- */
+    function selectCardDay(btnEl, day, serviceId) {
+      const card = document.getElementById(`card-${serviceId}`);
+      if (card) {
+        card.setAttribute('data-selected-day', day);
+        const buttons = card.querySelectorAll('.card-day-pill');
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        btnEl.classList.add('selected');
+      }
+    }
+
+    function bookFromCard(serviceId) {
+      const card = document.getElementById(`card-${serviceId}`);
+      if (!card) return;
+      const selectedDay = card.getAttribute('data-selected-day') || 'Mon - Fri';
+      const selectEl = card.querySelector('.card-timing-select');
+      const selectedTiming = selectEl ? selectEl.value : '5:00am-6:00am';
+
+      currentSelectedServiceId = serviceId;
+      currentSelectedDay = selectedDay;
+      currentSelectedTiming = selectedTiming;
+
+      proceedToBookingFromModal();
+    }
+
+    function renderCards() {
+      const grid = document.getElementById('class-catalogue-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      const categorySlugs = {
+        'Sweat & Sculpt': 'sweat-sculpt',
+        'Deep Rest & Sound': 'rest-sound',
+        'Heal & Restore': 'heal-restore',
+        'Life Stages & Corporate': 'lifestages-corporate'
+      };
+
+      Object.keys(SERVICES_DATA).forEach((key, index) => {
+        const item = SERVICES_DATA[key];
+        const isFeatured = index % 2 === 1;
+        const slug = categorySlugs[item.category] || '';
+
+        // Generate timing select options
+        let timingOptionsHtml = '';
+        item.timings.forEach(t => {
+          timingOptionsHtml += `<option value="${t}">${t}</option>`;
+        });
+
+        const card = document.createElement('div');
+        card.className = `service-card reveal ${isFeatured ? 'featured' : ''}`;
+        card.setAttribute('data-category', slug);
+        card.setAttribute('data-selected-day', 'Mon - Fri');
+        card.id = `card-${key}`;
+
+        card.innerHTML = `
+          <div class="service-card-icon">
+            ${item.iconSvg}
+          </div>
+          <h3 class="service-card-title">${item.title}</h3>
+          <p class="service-card-desc">${item.shortDesc}</p>
+          
+          <div class="card-selection-row">
+            <div class="card-days-selector">
+              <label class="card-input-label">Days</label>
+              <div class="card-day-options">
+                <button type="button" class="card-day-pill selected" onclick="selectCardDay(this, 'Mon - Fri', '${key}')">Mon - Fri</button>
+                <button type="button" class="card-day-pill" onclick="selectCardDay(this, 'Sat - Sun', '${key}')">Sat - Sun</button>
+              </div>
+            </div>
+            
+            <div class="card-timing-selector">
+              <label class="card-input-label">Time</label>
+              <select class="card-timing-select">
+                ${timingOptionsHtml}
+              </select>
+            </div>
+          </div>
+          
+          <div class="card-buttons-row">
+            <button type="button" class="btn-card-details" onclick="openServiceModal('${key}')">Details</button>
+            <button type="button" class="btn btn-primary btn-card-book" onclick="bookFromCard('${key}')">Book Now &rarr;</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    /* ----- Service Modal Handlers state ----- */
     let currentSelectedServiceId = 'primary-ashtanga';
     let currentSelectedDay = '';
     let currentSelectedTiming = '';
+
+    // Initialize cards rendering & re-observe for reveal
+    renderCards();
+    document.querySelectorAll('#class-catalogue-grid .reveal').forEach(el => revealObs.observe(el));
 
     function openServiceModal(serviceId) {
       const data = SERVICES_DATA[serviceId];
@@ -3816,11 +3945,11 @@
       document.getElementById('modal-category-badge').textContent = data.category;
       document.getElementById('modal-desc-box').innerHTML = data.description;
 
-      // Render Days pills
+      // Render Days as 2 pills: Mon-Fri / Sat-Sun
       const daysGroup = document.getElementById('modal-days-group');
       daysGroup.innerHTML = '';
-      currentSelectedDay = data.days[0] || '';
-      data.days.forEach((day, index) => {
+      currentSelectedDay = 'Mon - Fri';
+      ['Mon - Fri', 'Sat - Sun'].forEach((day, index) => {
         const pill = document.createElement('button');
         pill.type = 'button';
         pill.className = `select-pill ${index === 0 ? 'selected' : ''}`;
@@ -3833,22 +3962,21 @@
         daysGroup.appendChild(pill);
       });
 
-      // Render Timing pills
+      // Render Timings as a select dropdown
       const timeGroup = document.getElementById('modal-time-group');
       timeGroup.innerHTML = '';
       currentSelectedTiming = data.timings[0] || '';
+      const sel = document.createElement('select');
+      sel.style.cssText = 'width:100%;padding:0.55rem 0.75rem;font-size:var(--fs-sm);border-radius:var(--radius-sm);border:1.5px solid rgba(171,128,58,0.35);background:var(--clr-cream);color:var(--clr-text);outline:none;cursor:pointer;';
       data.timings.forEach((time, index) => {
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = `select-pill ${index === 0 ? 'selected' : ''}`;
-        pill.textContent = time;
-        pill.onclick = () => {
-          timeGroup.querySelectorAll('.select-pill').forEach(p => p.classList.remove('selected'));
-          pill.classList.add('selected');
-          currentSelectedTiming = time;
-        };
-        timeGroup.appendChild(pill);
+        const opt = document.createElement('option');
+        opt.value = time;
+        opt.textContent = time;
+        if (index === 0) opt.selected = true;
+        sel.appendChild(opt);
       });
+      sel.addEventListener('change', () => { currentSelectedTiming = sel.value; });
+      timeGroup.appendChild(sel);
 
       const modal = document.getElementById('service-modal');
       modal.classList.add('active');
@@ -4048,7 +4176,6 @@
 
     /* ----- Class Catalogue Filter Logic ----- */
     const classFilterBtns = document.querySelectorAll('.class-filter-btn');
-    const classCards = document.querySelectorAll('#class-catalogue-grid .service-card');
 
     classFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -4056,8 +4183,10 @@
         btn.classList.add('active');
 
         const filter = btn.dataset.filter;
+        // Query dynamically since cards are rendered after page load
+        const liveCards = document.querySelectorAll('#class-catalogue-grid .service-card');
 
-        classCards.forEach(card => {
+        liveCards.forEach(card => {
           if (filter === 'all' || card.dataset.category === filter) {
             card.style.display = 'flex';
             setTimeout(() => {
