@@ -3669,8 +3669,18 @@
           revealObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     revealEls.forEach(el => revealObs.observe(el));
+
+    // Immediately reveal elements already in viewport on page load
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible');
+        }
+      });
+    });
 
     /* ----- Pricing / Schedule Tab Switcher ----- */
     function switchTab(tab) {
@@ -3837,6 +3847,7 @@
         description: `<b>Senior & Mobility Yoga:</b> Gentle joint-freeing movements and chair-supported variations to preserve body balance, bone density, and joint agility.<br/><br/>Maintains independence, boosts circulation, and promotes calm vitality in a warm, welcoming, zero-pressure environment.`,
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
+      }
     };
 
     /* ----- Card Renderer ----- */
