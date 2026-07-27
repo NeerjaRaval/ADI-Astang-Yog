@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chakra Balancing & Wisdom | ADI Astanga Yoga</title>
+  <meta name="description"
+    content="Explore the seven energy centers of your body. Learn about Sahasrara, Ajna, Vishuddha, Anahata, Manipura, Svadhisthana, and Muladhara, and how to balance them with yoga and meditation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES & DESIGN TOKENS
+       (Cosmic Dark Purple & Gold Star Palette)
+    ============================================= */
+    :root {
+      --clr-cream: #f6f5f0;
+      --clr-terracotta: #9c4419;
+      --clr-amber: #db711b;
+      --clr-gold: #ffd700;
+      --clr-gold-soft: rgba(255, 215, 0, 0.28);
+
+      /* Cosmic Colors */
+      --clr-dark: #0e051b;
+      --clr-dark-2: rgba(23, 10, 42, 0.75);
+      --clr-dark-3: #261142;
+      --clr-text: #eae4f2;
+      --clr-text-muted: #b3a4c4;
+      --clr-white: #ffffff;
+
+      /* Chakra Colors (Top to Bottom: Sahasrara to Muladhara) */
+      --color-crown: #ff47e0;
+      --color-third-eye: #6b60ff;
+      --color-throat: #00c3ff;
+      --color-heart: #3ce65a;
+      --color-plexus: #ffd000;
+      --color-sacral: #ff7b00;
+      --color-root: #ff2e4c;
+
+      --ff-body: 'Plus Jakarta Sans', sans-serif;
+      --ff-display: 'Cormorant Garamond', serif;
+
+      --fs-xs: clamp(0.7rem, 1.5vw, 0.8rem);
+      --fs-sm: clamp(0.85rem, 1.8vw, 0.95rem);
+      --fs-base: clamp(0.95rem, 2vw, 1.05rem);
+      --fs-md: clamp(1.1rem, 2.5vw, 1.25rem);
+      --fs-lg: clamp(1.3rem, 3vw, 1.6rem);
+      --fs-xl: clamp(1.8rem, 4vw, 2.4rem) --fs-2xl: clamp(2.4rem, 5vw, 3.5rem);
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 28px;
+      --radius-xl: 40px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 24px 72px rgba(0, 0, 0, 0.85);
+
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      --max-w: 1200px;
+      --nav-h: 72px;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--ff-body);
+      background-color: var(--clr-dark);
+      color: var(--clr-text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* =============================================
+       ROTATING BACKDROP MANDALA & STARRY OVERLAY    
+    ============================================= */
+    .mandala-bg-container {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+      pointer-events: none;
+      background: #090212;
+    }
+
+    .mandala-bg-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 130vmax;
+      height: 130vmax;
+      transform: translate(-50%, -50%) rotate(0deg);
+      object-fit: contain;
+      opacity: 0.55;
+      animation: spin-mandala 80s linear infinite;
+      filter: saturate(1.3) contrast(1.1);
+    }
+
+    @keyframes spin-mandala {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* Dark Blur Softening Overlay */
+    .mandala-blur-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: rgba(14, 5, 27, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      pointer-events: none;
+    }
+
+    /* Golden Sparkling Stars Overlay */
+    .stars-layer {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, var(--clr-gold), transparent),
+        radial-gradient(2px 2px at 150px 180px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 300px 80px, var(--clr-gold), transparent),
+        radial-gradient(2.5px 2.5px at 450px 350px, #fff, transparent),
+        radial-gradient(2px 2px at 700px 120px, var(--clr-gold), transparent),
+        radial-gradient(1.5px 1.5px at 900px 420px, #fff, transparent),
+        radial-gradient(2px 2px at 1100px 200px, var(--clr-gold), transparent),
+        radial-gradient(2.5px 2.5px at 1300px 600px, #fff, transparent);
+      background-repeat: repeat;
+      background-size: 1400px 700px;
+      opacity: 0.4;
+      animation: stars-twinkle 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes stars-twinkle {
+      0% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0.65;
+        transform: scale(1.02);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: var(--ff-body);
+      outline: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--clr-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--clr-gold);
+      border-radius: var(--radius-pill);
+    }
+
+    /* =============================================
+       UTILITY CLASSES
+    ============================================= */
+    .container {
+      width: min(var(--max-w), 100% - 2rem);
+      margin-inline: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
+      color: var(--clr-white);
+      box-shadow: 0 4px 15px rgba(219, 113, 27, 0.4);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(219, 113, 27, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* =============================================
+       HEADER & NAVIGATION
+    ============================================= */
+    #navbar {
+      height: var(--nav-h);
+      background: rgba(14, 5, 27, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--clr-gold-soft);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-main {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--clr-cream);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+
+    .nav-logo-sub {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clr-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--clr-cream);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      border: none;
+      background: transparent;
+    }
+
+    .hamburger span {
+      width: 26px;
+      height: 2px;
+      background-color: var(--clr-cream);
+      transition: var(--transition);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: var(--nav-h) 0 0 0;
+      background: var(--clr-dark);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      z-index: 99;
+      transform: translateX(100%);
+      transition: var(--transition-slow);
+      border-left: 1px solid var(--clr-gold-soft);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-link {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--clr-cream);
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    #hero-chakra {
+      padding-top: calc(var(--nav-h) + 3.5rem);
+      padding-bottom: 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-gold);
+      padding: 0.4rem 1rem;
+      border: 1.5px solid var(--clr-gold-soft);
+      border-radius: var(--radius-pill);
+      background: rgba(255, 215, 0, 0.08);
+      margin-bottom: 1.2rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--clr-gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: var(--fs-2xl);
+      font-weight: 600;
+      color: var(--clr-cream);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .hero-sub {
+      font-size: var(--fs-base);
+      color: var(--clr-text-muted);
+      max-width: 65ch;
+      margin-inline: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    /* =============================================
+       MULTILAYERED INTERACTIVE CHAKRA PAGE GRID
+    ============================================= */
+    .chakra-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 4rem;
+      position: relative;
+      margin-bottom: 8rem;
+    }
+
+    /* Left Column: Human Silhouette Artwork */
+    .silhouette-column {
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+      height: calc(100vh - var(--nav-h) - 3rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .silhouette-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--clr-gold-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg), 0 0 35px rgba(107, 96, 255, 0.25);
+      background: rgba(14, 5, 27, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Meditating Human Silhouette (chakra.png) */
+    .silhouette-human-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: var(--transition-slow);
+    }
+
+    /* Interactive Non-Obstructive Hotspot Nodes Overlay */
+    .hotspot-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .chakra-hotspot {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: all;
+      transition: var(--transition);
+      z-index: 15;
+    }
+
+    /* Translucent Subtle Aura Ring */
+    .hotspot-aura {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: var(--node-color);
+      opacity: 0.35;
+      animation: aura-pulse 3s ease-in-out infinite;
+      transition: var(--transition);
+    }
+
+    /* Outer Dashed Ring */
+    .hotspot-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1.5px dashed var(--node-color);
+      opacity: 0.5;
+      animation: ring-rotate 16s linear infinite;
+      transition: var(--transition);
+    }
+
+    /* Center Glow Point */
+    .hotspot-core {
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      /* background: var(--node-color); */
+      box-shadow: 0 0 10px var(--node-color), 0 0 18px var(--node-color);
+      border: 1.5px solid var(--clr-white);
+      transition: var(--transition);
+    }
+
+    /* Hover & Active States */
+    .chakra-hotspot:hover .hotspot-core,
+    .chakra-hotspot.active .hotspot-core {
+      inset: 6px;
+      box-shadow: 0 0 16px var(--node-color), 0 0 30px var(--node-color);
+    }
+
+    .chakra-hotspot:hover .hotspot-aura,
+    .chakra-hotspot.active .hotspot-aura {
+      opacity: 0.75;
+      inset: -14px;
+    }
+
+    .chakra-hotspot:hover .hotspot-ring,
+    .chakra-hotspot.active .hotspot-ring {
+      opacity: 0.95;
+      inset: -8px;
+      border-style: solid;
+    }
+
+    @keyframes aura-pulse {
+
+      0%,
+      100% {
+        transform: scale(0.9);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.55;
+      }
+    }
+
+    @keyframes ring-rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Right Description Scroll Panel */
+    .details-column {
+      display: flex;
+      flex-direction: column;
+      gap: 4.5rem;
+    }
+
+    .chakra-card {
+      background: var(--clr-dark-2);
+      border: 1.5px solid var(--clr-gold-soft);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      scroll-margin-top: calc(var(--nav-h) + 2rem);
+      transition: var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .chakra-card.active-card {
+      border-color: var(--chakra-accent);
+      box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5), 0 0 35px var(--chakra-glow);
+      transform: translateY(-4px);
+    }
+
+    /* Card Glow Background */
+    .chakra-card::after {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--chakra-glow) 0%, transparent 70%);
+      opacity: 0;
+      transition: var(--transition-slow);
+      pointer-events: none;
+    }
+
+    .chakra-card.active-card::after {
+      opacity: 0.65;
+    }
+
+    /* Card Header Styles */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+      padding-bottom: 1.5rem;
+    }
+
+    .card-title-group h3 {
+      font-family: var(--ff-display);
+      font-size: var(--fs-xl);
+      color: var(--clr-cream);
+      font-weight: 600;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .card-title-group .sanskrit {
+      color: var(--chakra-accent);
+    }
+
+    .card-title-group .translation {
+      font-size: var(--fs-sm);
+      color: var(--clr-text-muted);
+      font-family: var(--ff-body);
+      font-weight: 500;
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    .chakra-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      background-color: var(--chakra-accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 0 12px var(--chakra-accent);
+    }
+
+    /* Cropped Clean Chakra Emblem Container in Description Cards */
+    .chakra-emblem-wrap {
+      width: 100%;
+      height: 175px;
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      position: relative;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      background: radial-gradient(circle, var(--chakra-glow) 0%, rgba(14, 5, 27, 0.85) 85%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .cropped-chakra-img {
+      max-height: 145px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 15px var(--chakra-accent));
+      transition: var(--transition);
+    }
+
+    .chakra-emblem-wrap:hover .cropped-chakra-img {
+      transform: scale(1.08);
+    }
+
+    /* Details Grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .meta-item {
+      background: rgba(14, 5, 27, 0.55);
+      border: 1px solid rgba(255, 215, 0, 0.12);
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .meta-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .meta-val {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-cream);
+    }
+
+    .card-description {
+      margin-bottom: 2.2rem;
+      color: var(--clr-text);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    /* Balancing Stats Block */
+    .balance-states-box {
+      background: rgba(14, 5, 27, 0.55);
+      border: 1.5px solid rgba(255, 215, 0, 0.12);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .balance-title {
+      font-family: var(--ff-display);
+      font-size: var(--fs-md);
+      color: var(--clr-cream);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .state-indicator {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .state-row {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 1rem;
+      font-size: var(--fs-sm);
+    }
+
+    .state-label {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+
+    .state-label.under {
+      color: #ff6b6b;
+    }
+
+    .state-label.balanced {
+      color: #41e784;
+    }
+
+    .state-label.over {
+      color: #ffab40;
+    }
+
+    .state-desc {
+      color: var(--clr-text-muted);
+      line-height: 1.5;
+    }
+
+    .state-row:hover .state-desc {
+      color: var(--clr-text);
+    }
+
+    /* Healing Practices Grid */
+    .practices-header {
+      font-family: var(--ff-display);
+      font-size: var(--fs-md);
+      color: var(--clr-cream);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .practices-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .practice-card {
+      border: 1px dashed rgba(255, 215, 0, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      transition: var(--transition);
+      background: rgba(38, 17, 66, 0.25);
+    }
+
+    .practice-card:hover {
+      border-color: var(--chakra-accent);
+      background: rgba(38, 17, 66, 0.5);
+    }
+
+    .practice-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--clr-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .practice-val {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--clr-text);
+      line-height: 1.4;
+    }
+
+    /* Quick Selector Sidebar */
+    .quick-selector {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      z-index: 90;
+    }
+
+    .quick-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 215, 0, 0.3);
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .quick-dot::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: var(--clr-dark);
+      border: 1px solid var(--clr-gold-soft);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--clr-cream);
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .quick-dot:hover::before {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .quick-dot.active-dot {
+      background: var(--chakra-accent);
+      border-color: var(--clr-white);
+      transform: scale(1.3);
+      box-shadow: 0 0 10px var(--chakra-accent);
+    }
+
+    /* =============================================
+       RESPONSIVE DESIGN
+    ============================================= */
+    @media (max-width: 1024px) {
+      .chakra-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .silhouette-column {
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-block: 2rem;
+        border-bottom: 1px solid var(--clr-gold-soft);
+      }
+
+      .silhouette-card {
+        max-width: 360px;
+      }
+
+      .quick-selector {
+        display: none;
+      }
+
+      #hero-chakra {
+        padding-top: calc(var(--nav-h) + 2rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .practices-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chakra-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============================================
+       ROTATING BACKGROUND MANDALA & STARRY BACKDROP
+  ============================================= -->
+  <div class="mandala-bg-container">
+    <img src="Assest/mandala.jpg" alt="Rotating Background Mandala Artwork" class="mandala-bg-img" />
+  </div>
+  <div class="mandala-blur-overlay"></div>
+  <div class="stars-layer"></div>
+
+  <!-- =============================================
+       1. NAVIGATION NAVBAR
+  ============================================= -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-main">
+          ADI<!-- &#9775; -->
+        </span>
+        <span class="nav-logo-sub">Astanga Yoga Academy</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Practices</a>
+        <a href="chakra.html" class="active">Chakras</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#pricing">Plans</a>
+        <a href="index.html#testimonials">Stories</a>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-left:0.5rem">Begin Journey</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="index.html#services" class="mobile-nav-link">Practices</a>
+    <a href="chakra.html" class="mobile-nav-link">Chakras</a>
+    <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+    <a href="index.html#pricing" class="mobile-nav-link">Plans</a>
+    <a href="index.html#testimonials" class="mobile-nav-link">Stories</a>
+    <a href="index.html#contact" class="btn btn-primary"
+      style="margin-top:0.5rem;text-align:center;justify-content:center;">Begin Your Journey &rarr;</a>
+  </div>
+
+  <!-- =============================================
+       2. HERO SECTION
+  ============================================= -->
+  <section id="hero-chakra">
+    <div class="container">
+      <span class="section-label">Subtle Energy System</span>
+      <h1 class="hero-title">The Seven Chakras</h1>
+      <p class="hero-sub">
+        Explore the primary vortexes of energy aligned along your spine from Sahasrara (Crown) down to Muladhara (Root).
+        Harmonizing these energy centers balances your physical body, mind, and cosmic consciousness.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       3. INTERACTIVE CHAKRA VIEWER
+  ============================================= -->
+  <main class="container">
+    <div class="chakra-layout">
+
+      <!-- LEFT: Human Silhouette Artwork Column (chakra.png) -->
+      <div class="silhouette-column">
+        <div class="silhouette-card">
+          <!-- Meditating Human Silhouette Artwork -->
+          <img src="Assest/chakra.png" alt="Meditating Human Silhouette" class="silhouette-human-img">
+
+          <!-- Non-Obstructive Interactive Hotspots Overlay -->
+          <div class="hotspot-layer">
+            <!-- 1. Crown (Sahasrara) --node-color: var(--color-crown)-->
+            <div class="chakra-hotspot" data-chakra="sahasrara" style="top: 17%;">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 2. Third Eye (Ajna) --node-color: var(--color-third-eye)-->
+            <div class="chakra-hotspot" data-chakra="ajna" style="top: 29%; ">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 3. Throat (Vishuddha)  --node-color: var(--color-throat)-->
+            <div class="chakra-hotspot" data-chakra="vishuddha" style="top: 40%;">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 4. Heart (Anahata) --node-color: var(--color-heart)-->
+            <div class="chakra-hotspot" data-chakra="anahata" style="top: 51%; ">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 5. Solar Plexus (Manipura) --node-color: var(--color-plexus)-->
+            <div class="chakra-hotspot" data-chakra="manipura" style="top: 63%; ">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 6. Sacral (Svadhisthana) --node-color: var(--color-sacral)-->
+            <div class="chakra-hotspot" data-chakra="svadhisthana" style="top: 74%; ">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+
+            <!-- 7. Root (Muladhara) --node-color: var(--color-root)-->
+            <div class="chakra-hotspot" data-chakra="muladhara" style="top: 86%; ">
+              <div class="hotspot-aura"></div>
+              <div class="hotspot-ring"></div>
+              <div class="hotspot-core"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Description Scrollable Cards (Crown to Root) -->
+      <div class="details-column" id="details-column">
+
+        <!-- 1. CROWN CHAKRA (Sahasrara) -->
+        <section class="chakra-card" id="sahasrara"
+          style="--chakra-accent: var(--color-crown); --chakra-glow: rgba(255, 71, 224, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Sahasrara</span> </h2><span>(Crown Chakra)</span>
+              <span class="translation">"Thousand-Folded Lotus" &mdash; Portal of cosmic unity</span>
+            </div>
+            <span class="chakra-badge">Chakra 1</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-1.png" alt="Sahasrara (Crown) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Crown of Head</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Thought / Pure Consciousness</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">OM / Silence</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Divine Connection, Enlightenment</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Sahasrara sits at the crown of the head as the gateway to universal consciousness and divine spirit. It
+            represents our capacity to connect to the transcendent, realize our inner divinity, and experience pure
+            bliss (ananda).
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Spiritual cynicism, disconnect from self, rigid skepticism, apathy,
+                  depression.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Spiritual wisdom, feeling connected to the universe, profound peace,
+                  liberation.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Disembodied living, spiritual bypassing, isolation, separation from physical
+                  reality.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Sirsasana (Headstand), Padmasana (Lotus), Savasana (Corpse Pose)</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I am connected to the universal source of light, love, and wisdom."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Clear Quartz &amp; Selenite / Frankincense &amp; Rose</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Practice silent meditation, focusing on a violet/white lotus above the head.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. THIRD EYE CHAKRA (Ajna) -->
+        <section class="chakra-card" id="ajna"
+          style="--chakra-accent: var(--color-third-eye); --chakra-glow: rgba(107, 96, 255, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Ajna</span> </h2><span>Third Eye Chakra</span>
+              <span class="translation">"Command &amp; Perceive" &mdash; Seat of intuition and inner sight</span>
+            </div>
+            <span class="chakra-badge">Chakra 2</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-2.png" alt="Ajna (Third Eye) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Forehead (between eyebrows)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Light (Jyoti)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">OM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Intuition, Wisdom, Inner Sight</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Ajna transcends physical sight, offering inner vision, intuition, wisdom, and cosmic clarity. Operating as
+            the gateway to the subconscious, it helps you see past illusions and connect to the inner truth of all
+            things.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Lack of direction, cynicism, memory issues, narrow-mindedness, feeling
+                  lost.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Intuitive insight, clear vision, mental clarity, creative imagination,
+                  wisdom.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Headaches, nightmares, overthinking, anxiety, hallucinations, living in
+                  fantasy.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Balasana (Child's Pose), Sukhasana (Easy Pose), Adho Mukha Svanasana</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I trust my intuition and see my path with perfect clarity."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Amethyst &amp; Fluorite / Lavender &amp; Frankincense</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Practice Trataka (candle gazing) or concentrate on an indigo light on your brow.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. THROAT CHAKRA (Vishuddha) -->
+        <section class="chakra-card" id="vishuddha"
+          style="--chakra-accent: var(--color-throat); --chakra-glow: rgba(0, 195, 255, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Vishuddha</span> </h2><span>Throat Chakra</span>
+              <span class="translation">"Especially Pure" &mdash; Hub of truth and self-expression</span>
+            </div>
+            <span class="chakra-badge">Chakra 3</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-3.png" alt="Vishuddha (Throat) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Base of Throat</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Ether / Space (Akasha)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">HAM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Truth, Communication, Expression</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Vishuddha oversees your expression and voice. As the center for communication, it enables you to speak your
+            truth honestly and listen to others deeply. Physically, it regulates the thyroid and neck alignment.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Fear of speaking, throat tightness, shyness, hiding your truth,
+                  stuttering.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Clear communication, truthfulness, creative self-expression, empathetic
+                  listening.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Gossiping, talking excessively, interrupting, sharp/aggressive tone, inability
+                  to listen.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Sarvangasana (Shoulderstand), Matsyasana (Fish Pose), Ustrasana</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I express my truth with clarity, love, and courage."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Lapis Lazuli &amp; Sodalite / Eucalyptus &amp; Peppermint</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Chant HAM while focusing on a spinning sky-blue vortex at your throat.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. HEART CHAKRA (Anahata) -->
+        <section class="chakra-card" id="anahata"
+          style="--chakra-accent: var(--color-heart); --chakra-glow: rgba(60, 230, 90, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Anahata</span> </h2><span>Heart Chakra</span>
+              <span class="translation">"Unstruck Sound" &mdash; Bridge of compassion and love</span>
+            </div>
+            <span class="chakra-badge">Chakra 4</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-4.png" alt="Anahata (Heart) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Center of Chest (Heart)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Air (Vayu)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">YAM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Unconditional Love, Empathy, Peace</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Anahata resides at the center of the chakra system, acting as the bridge between the lower physical chakras
+            and the higher spiritual ones. It governs love, empathy, compassion, self-acceptance, and deep emotional
+            peace.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Grief, isolation, fear of rejection, inability to forgive, harsh
+                  self-judgment.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Compassionate, forgiving, loving, self-accepting, peaceful connection to all
+                  life.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Co-dependency, boundary-less empathy, possessiveness, people-pleasing.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Ustrasana (Camel), Bhujangasana (Cobra), Anahatasana</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I give and receive love effortlessly and forgive with ease."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Rose Quartz &amp; Green Jade / Jasmine &amp; Lavender</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Breathe into your chest, visualizing emerald green light expanding outwards.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. SOLAR PLEXUS CHAKRA (Manipura) -->
+        <section class="chakra-card" id="manipura"
+          style="--chakra-accent: var(--color-plexus); --chakra-glow: rgba(255, 208, 0, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Manipura</span> </h2><span>Solar Plexus Chakra</span>
+              <span class="translation">"City of Jewels" &mdash; Seat of personal power and will</span>
+            </div>
+            <span class="chakra-badge">Chakra 5</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-5.png" alt="Manipura (Solar Plexus) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Solar Plexus (Stomach area)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Fire (Agni)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">RAM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Willpower, Confidence, Self-Esteem</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Manipura is the source of your personal power, fire, willpower, and inner strength. It acts as our internal
+            engine, regulating metabolism and digestion physically, while dictating our ability to make decisions, take
+            action, and hold healthy boundaries mentally.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Low self-esteem, passivity, indecisiveness, victim mentality, sluggish
+                  digestion.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Strong willpower, self-respect, purposeful action, warm personality, healthy
+                  boundaries.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Anger, control issues, workaholism, arrogance, competitive obsession.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Navasana (Boat), Dhanurasana (Bow), Phalakasana (Plank)</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I stand in my strength and act with courage and conviction."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Tiger's Eye / Lemon, Ginger &amp; Grapefruit</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Visualize a radiant golden sun at your core, filling you with warm vitality.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SACRAL CHAKRA (Svadhisthana) -->
+        <section class="chakra-card" id="svadhisthana"
+          style="--chakra-accent: var(--color-sacral); --chakra-glow: rgba(255, 123, 0, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Svadhisthana</span> </h2><span>Sacral Chakra</span>
+              <span class="translation">"One's Own Abode" &mdash; Center of creativity and flow</span>
+            </div>
+            <span class="chakra-badge">Chakra 6</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-6.png" alt="Svadhisthana (Sacral) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Lower Abdomen (below navel)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Water (Apas)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">VAM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Creativity, Passion, Emotions</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Svadhisthana governs our emotions, relationships, sensuality, and creative impulse. Matching the fluidity of
+            its water element, this chakra allows us to flow with life's changes, embrace pleasure responsibly, and
+            connect deeply with others.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Emotional numbness, creative blocks, fear of intimacy, rigidity, low
+                  libido.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Creative flow, healthy relationships, emotional intelligence, vitality,
+                  adaptability.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Emotional instability, codependency, addictive behaviors, drama, overwhelming
+                  desire.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Bhujangasana (Cobra), Baddha Konasana (Bound Angle), Utkata Konasana</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I honor my emotions and allow my creativity to flow freely."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Carnelian / Ylang Ylang, Sandalwood &amp; Orange</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Visualize an orange lotus blooming below your navel, floating in pristine water.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. ROOT CHAKRA (Muladhara) -->
+        <section class="chakra-card" id="muladhara"
+          style="--chakra-accent: var(--color-root); --chakra-glow: rgba(255, 46, 76, 0.28)">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h2><span class="sanskrit">Muladhara</span> </h2><span>Root Chakra</span>
+              <span class="translation">"Root Support" &mdash; The foundation of stability</span>
+            </div>
+            <span class="chakra-badge">Chakra 7</span>
+          </div>
+
+          <!-- Cropped Clean Chakra Emblem from Sahasrara.png Collage -->
+          <div class="chakra-emblem-wrap">
+            <img src="Assest/chakras/chakra-7.png" alt="Muladhara (Root) Emblem" class="cropped-chakra-img">
+          </div>
+
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <div class="meta-label">Location</div>
+              <div class="meta-val">Base of Spine (Coccyx)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Element</div>
+              <div class="meta-val">Earth (Prithvi)</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Seed Sound</div>
+              <div class="meta-val">LAM</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Core Essence</div>
+              <div class="meta-val">Safety, Grounding, Trust</div>
+            </div>
+          </div>
+
+          <p class="card-description">
+            Muladhara anchors us to the physical world, governing our basic survival instincts, financial security,
+            shelter, and feeling of belonging. When balanced, you feel grounded, stable, safe, and confident in your
+            right to exist.
+          </p>
+
+          <div class="balance-states-box">
+            <h4 class="balance-title">Importance to Balance</h4>
+            <div class="state-indicator">
+              <div class="state-row">
+                <span class="state-label under">Underactive</span>
+                <span class="state-desc">Fear, anxiety, feeling ungrounded, lack of discipline, financial
+                  instability.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label balanced">Balanced</span>
+                <span class="state-desc">Centered, secure, physically strong, stable state of mind, strong survival
+                  instinct.</span>
+              </div>
+              <div class="state-row">
+                <span class="state-label over">Overactive</span>
+                <span class="state-desc">Materialism, greed, resistance to change, sluggishness, rigid
+                  boundaries.</span>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="practices-header">Balancing Sadhana</h4>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-label">Yoga Asanas</div>
+              <div class="practice-val">Tadasana (Mountain), Vrikshasana (Tree), Malasana (Yogi Squat)</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Affirmation</div>
+              <div class="practice-val">"I am safe, grounded, and supported by the Earth."</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Crystal &amp; Oil</div>
+              <div class="practice-val">Red Jasper / Cedarwood &amp; Patchouli</div>
+            </div>
+            <div class="practice-card">
+              <div class="practice-label">Meditation</div>
+              <div class="practice-val">Visualize a deep red light at the tailbone connecting down into the earth.</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Quick floating dots sidebar -->
+  <div class="quick-selector" id="quick-selector">
+    <div class="quick-dot" data-chakra="sahasrara" data-tooltip="Chakra 1: Crown (Sahasrara)"></div>
+    <div class="quick-dot" data-chakra="ajna" data-tooltip="Chakra 2: Third Eye (Ajna)"></div>
+    <div class="quick-dot" data-chakra="vishuddha" data-tooltip="Chakra 3: Throat (Vishuddha)"></div>
+    <div class="quick-dot" data-chakra="anahata" data-tooltip="Chakra 4: Heart (Anahata)"></div>
+    <div class="quick-dot" data-chakra="manipura" data-tooltip="Chakra 5: Solar Plexus (Manipura)"></div>
+    <div class="quick-dot" data-chakra="svadhisthana" data-tooltip="Chakra 6: Sacral (Svadhisthana)"></div>
+    <div class="quick-dot" data-chakra="muladhara" data-tooltip="Chakra 7: Root (Muladhara)"></div>
+  </div>
+
+  <!-- =============================================
+       JAVASCRIPT FOR INTERACTIVE ANIMATIONS
+  ============================================= -->
+  <script>
+    /* ----- Sticky Header Scroll ----- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.style.background = 'rgba(14, 5, 27, 0.96)';
+        navbar.style.boxShadow = 'var(--shadow-sm)';
+      } else {
+        navbar.style.background = 'rgba(14, 5, 27, 0.85)';
+        navbar.style.boxShadow = 'none';
+      }
+    }, { passive: true });
+
+    /* ----- Mobile Menu Toggle ----- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      if (hamburger.classList.contains('open')) {
+        hamburger.children[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+        hamburger.children[1].style.opacity = '0';
+        hamburger.children[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        hamburger.children[0].style.transform = 'none';
+        hamburger.children[1].style.opacity = '1';
+        hamburger.children[2].style.transform = 'none';
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.children[0].style.transform = 'none';
+        hamburger.children[1].style.opacity = '1';
+        hamburger.children[2].style.transform = 'none';
+      });
+    });
+
+    /* ----- Interactive Hotspot & Scroll Synchronizer ----- */
+    const hotspots = document.querySelectorAll('.chakra-hotspot');
+    const cards = document.querySelectorAll('.chakra-card');
+    const dots = document.querySelectorAll('.quick-dot');
+
+    function setActiveChakra(chakraId) {
+      hotspots.forEach(spot => {
+        const isActive = spot.dataset.chakra === chakraId;
+        spot.classList.toggle('active', isActive);
+      });
+
+      cards.forEach(card => {
+        const isActive = card.id === chakraId;
+        card.classList.toggle('active-card', isActive);
+      });
+
+      dots.forEach(dot => {
+        const isActive = dot.dataset.chakra === chakraId;
+        dot.classList.toggle('active-dot', isActive);
+      });
+    }
+
+    function scrollToCard(chakraId) {
+      const targetCard = document.getElementById(chakraId);
+      if (targetCard) {
+        observerActive = false;
+
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+        const targetOffset = targetCard.getBoundingClientRect().top + window.scrollY - navH - 24;
+
+        window.scrollTo({
+          top: targetOffset,
+          behavior: 'smooth'
+        });
+
+        setActiveChakra(chakraId);
+
+        setTimeout(() => {
+          observerActive = true;
+        }, 800);
+      }
+    }
+
+    hotspots.forEach(spot => {
+      spot.addEventListener('click', () => {
+        scrollToCard(spot.dataset.chakra);
+      });
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        scrollToCard(dot.dataset.chakra);
+      });
+    });
+
+    let observerActive = true;
+    const cardObserverOptions = {
+      root: null,
+      rootMargin: '-25% 0px -45% 0px',
+      threshold: 0.1
+    };
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      if (!observerActive) return;
+
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveChakra(entry.target.id);
+        }
+      });
+    }, cardObserverOptions);
+
+    cards.forEach(card => cardObserver.observe(card));
+  </script>
+
+</body>
+
+</html>
