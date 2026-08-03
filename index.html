@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADI Astanga Yoga | Find Your Flow. Transform Your Life.</title>
+  <title>ADI Ashtanga Yoga | Find Your Flow. Transform Your Life.</title>
   <meta name="description"
-    content="ADI Astanga Yoga — Where ancient wisdom meets modern wellness. Join our community of yogis and experience the transformative power of Ashtanga yoga, Ayurveda, and mindful living." />
+    content="ADI Ashtanga Yoga — Where ancient wisdom meets modern wellness. Join our community of yogis and experience the transformative power of Ashtanga yoga, Ayurveda, and mindful living." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
     rel="stylesheet" />
+  <link rel="icon" href="Assest/logo.png" type="image/x-ico">
+
 
   <style>
     /* =============================================
@@ -688,7 +690,7 @@
     .yoga-symbol-1 {
       background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
       border-radius: 50%;
-      box-shadow: 0 5px 10px ;
+      box-shadow: 0 5px 10px;
       animation: float 4s ease-in-out infinite;
       max-height: 70%;
       max-width: 60%;
@@ -715,6 +717,12 @@
       position: relative;
       z-index: 1;
       width: 500px;
+    }
+
+    .hero-card-title em {
+      font-style: italic;
+      color: var(--clr-terracotta);
+      position: relative;
     }
 
     .hero-card-sub {
@@ -1241,6 +1249,7 @@
         flex-direction: column;
         align-items: stretch;
       }
+
       .card-day-options {
         justify-content: space-between;
       }
@@ -2520,6 +2529,89 @@
       .hero-stats {
         gap: 1.5rem;
       }
+    /* =============================================
+       DELIVERY MODES SECTION styling
+    ============================================= */
+    #delivery-modes {
+      padding-block: 5.5rem;
+      position: relative;
+      background-color: var(--clr-cream);
+      z-index: 1;
+    }
+
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .delivery-card {
+      background: #ffffff;
+      border: 1.5px solid var(--clr-glass-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition-slow);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .delivery-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--clr-terracotta), var(--clr-amber));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .delivery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--clr-terracotta);
+    }
+
+    .delivery-card:hover::before {
+      opacity: 1;
+    }
+
+    .delivery-icon-box {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+
+    .delivery-card h3 {
+      font-family: var(--ff-display);
+      font-size: var(--fs-md);
+      color: var(--clr-dark);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .delivery-offerings {
+      font-size: var(--fs-sm);
+      color: var(--clr-text);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .delivery-reach {
+      font-size: var(--fs-xs);
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+      border-top: 1px solid rgba(171, 128, 58, 0.15);
+      padding-top: 1rem;
+      margin-top: auto;
+      width: 100%;
     }
   </style>
 </head>
@@ -2532,7 +2624,7 @@
   <div class="announce-bar" id="announce-bar">
     <div class="announce-text">
       <span>🙏</span>
-      <span>Namaste! Welcome to <strong>ADI Astanga Yoga</strong> &mdash; Begin Your Sacred Journey Today</span>
+      <span>Namaste! Welcome to <strong>ADI Ashtanga Yoga</strong> &mdash; Begin Your Sacred Journey Today</span>
     </div>
     <div class="announce-links">
       <a href="https://chat.whatsapp.com/GJ1Vogs0uUW9y4Fu8O2Wgp?s=sh&p=a&ilr=1&amv=0" target="_blank" rel="noopener"
@@ -2559,7 +2651,7 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <span class="nav-logo-main"><b>ADI</b><!-- &#9775; --> </span>
-        <span class="nav-logo-sub">Astanga Yoga</span>
+        <span class="nav-logo-sub">Ashtanga Yoga</span>
       </a>
 
       <div class="nav-links" id="nav-links">
@@ -2567,7 +2659,7 @@
         <a href="#services">Practices</a>
         <a href="chakra.html">Chakras</a>
         <a href="gallery.html">Gallery</a>
-        <a href="#pricing">Plans</a>
+        <!-- <a href="#pricing">Plans</a> -->
         <a href="#testimonials">Stories</a>
         <a href="#contact" class="btn btn-primary" style="margin-left:0.5rem">Begin Journey</a>
       </div>
@@ -2585,12 +2677,15 @@
     <a href="#services" class="mobile-nav-link">Practices</a>
     <a href="chakra.html" class="mobile-nav-link">Chakras</a>
     <a href="gallery.html" class="mobile-nav-link">Gallery</a>
-    <a href="#pricing" class="mobile-nav-link">Plans</a>
+    <!-- <a href="#pricing" class="mobile-nav-link">Plans</a> -->
     <a href="#testimonials" class="mobile-nav-link">Stories</a>
     <a href="#contact" class="btn btn-primary" style="margin-top:0.5rem;text-align:center;justify-content:center;">Begin
       Your Journey &rarr;</a>
   </div>
 
+  <!-- =============================================
+       2. HERO SECTION
+  ============================================= -->
   <!-- =============================================
        2. HERO SECTION
   ============================================= -->
@@ -2602,32 +2697,28 @@
       <div class="hero-inner">
 
         <div class="hero-content">
-          <!-- <div class="hero-badge">
-            <span class="pulse">&#9679;</span>  Now Open &mdash; Free Trial Class AvailableBatches
-          </div> -->
+          <!-- SEO H1: Main Heading for Search Optimization -->
+          <h1 class="hero-heading" style="font-size: clamp(1.8rem, 4.2vw, 2.8rem); line-height: 1.25; margin-bottom: 1.5rem;">
+            ADI Ashtanga Yoga &mdash; <span style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); display: block; font-weight: 500; margin-top: 0.5rem; color: var(--clr-amber); line-height: 1.4;">Authentic Personal, Group &amp; Corporate Yoga in Ahmedabad, Gandhinagar &amp; Online Worldwide</span>
+          </h1>
 
-          <h3 class="hero-heading">
-            कायाइन्द्रिय<em>सिद्धिः</em> अशुद्धिक्षयात् <em>तपसः॥</em><br />
-          </h3>
-
-          <p class="hero-sub">
-            Through the fiery practice of Tapas (discipline and grit), impurities are &mdash; completely destroyed,
-            bringing absolute mastery (Siddhi) over the physical body and the senses. The journey from <b>Tapas</b> to
-            the state of <b>Ananda</b>
+          <!-- SEO Tagline / Sub-headline with targeted keywords -->
+          <p class="hero-sub" style="font-size: var(--fs-md); line-height: 1.7; margin-bottom: 2rem;">
+            Transformative Ashtanga &amp; Ayurvedic Yoga tailored for all age groups. Offering home personal training, local group batches, school &amp; corporate wellness programs across Ahmedabad &amp; Gandhinagar &mdash; and live online sessions globally.
           </p>
-          <p class="hero-sub">तपस (अनुशासन और दृढ़ संकल्प) के इस अग्निपथ के माध्यम से, अशुद्धियाँ पूरी तरह से नष्ट हो
+          <p class="hero-sub" style="font-size: 0.9rem; opacity: 0.85; margin-top: -1.5rem; margin-bottom: 2.5rem;">तपस (अनुशासन और दृढ़ संकल्प) के इस अग्निपथ के माध्यम से, अशुद्धियाँ पूरी तरह से नष्ट हो
             जाती हैं, जिससे भौतिक शरीर और इंद्रियों पर पूर्ण विजय (सिद्धि) प्राप्त होती है। <b>तपस</b> से <b>आनंद</b> की
             अवस्था तक की यात्रा।</p>
 
           <div class="hero-ctas">
             <a href="gallery.html" class="btn btn-primary">
-              Gallery
+              Yoga Gallery
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="#pricing" class="btn btn-outline">View Memberships</a>
+            <a href="#pricing" class="btn btn-outline">View Yoga Memberships</a>
           </div>
 
           <div class="hero-stats">
@@ -2640,7 +2731,7 @@
               <span class="stat-label">Years of Practice</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">4.9&#9733;</span>
+              <span class="stat-num">4.9★</span>
               <span class="stat-label">Student Rating</span>
             </div>
           </div>
@@ -2648,16 +2739,23 @@
 
         <div class="hero-visual">
           <div class="float-card float-card-1">
-            <div class="float-card-icon"><img src="Assest/facebook.webp"></div>
+            <!-- SEO FIX: Added descriptive alt text to the icon -->
+            <div class="float-card-icon"><img src="Assest/facebook.webp" alt="ADI Ashtanga Yoga Facebook Page"></div>
             <div>
-              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a href="https://www.facebook.com/profile.php?id=61591786163897">Facebook</a></div>
-              <!-- <div style="font-size:0.68rem;color:var(--clr-text-muted)">6:00 AM &middot; Daily</div> -->
+              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a
+                  href="https://www.facebook.com/profile.php?id=61591786163897" rel="noopener"
+                  target="_blank">Facebook</a></div>
             </div>
           </div>
 
           <div class="hero-glass-card">
-            <img class="yoga-symbol-1" src="Assest/logo.png" alt="logo">
-            <div class="hero-card-title">ADI Astanga Yoga</div>
+            <!-- SEO FIX: Added clear descriptive alt text containing the brand name -->
+            <img class="yoga-symbol-1" src="Assest/logo.png" alt="ADI Ashtanga Yoga Studio Logo">
+            <!-- SEO FIX: Changed to h2 to maintain correct heading hierarchy -->
+            <!-- <h2 class="hero-card-title">ADI Ashtanga Yoga</h2> -->
+            <h3 class="hero-card-title">
+              <span>कायाइन्द्रिय<em>सिद्धिः</em><br> अशुद्धिक्षयात् <em>तपसः॥</em></span>
+            </h3>
             <div class="hero-card-sub">Awaken Absolute Bliss &mdash; Through Intense Grit</div>
             <div class="hero-pill-badges">
               <span class="pill-badge">Ashtanga</span>
@@ -2668,10 +2766,13 @@
           </div>
 
           <div class="float-card float-card-2">
-            <div class="float-card-icon"><img src="Assest/instagram-vector-logo-icon-social-media-logotype_901408-392.avif"></div>
+            <!-- SEO FIX: Added descriptive alt text to the icon -->
+            <div class="float-card-icon"><img
+                src="Assest/instagram-vector-logo-icon-social-media-logotype_901408-392.avif"
+                alt="ADI Ashtanga Yoga Instagram Profile"></div>
             <div>
-              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a href="https://www.instagram.com/adi.astanga.yoga/">Instagram</a></div>
-              <!-- <div style="font-size:0.68rem;color:var(--clr-text-muted)">Personalized &middot; Holistic</div> -->
+              <div style="font-weight:800;font-size:0.75rem;color:var(--clr-dark)"><a
+                  href="https://www.instagram.com/adi.Ashtanga.yoga/" rel="noopener" target="_blank">Instagram</a></div>
             </div>
           </div>
         </div>
@@ -2679,6 +2780,65 @@
       </div>
     </div>
   </section>
+
+  <!-- =============================================
+       2.5 DELIVERY MODES SECTION (SEO & REACH)
+  ============================================= -->
+  <section id="delivery-modes">
+    <div class="container">
+      <div class="services-header reveal" style="text-align: center; margin-bottom: 3rem;">
+        <span class="section-label">Flexible Delivery Modes</span>
+        <h2 class="section-title">Where &amp; How You Can Train With Us</h2>
+        <p class="section-subtitle" style="margin-inline:auto;margin-top:1rem; max-width: 800px;">
+          Whether at your home, in our group venues, at your workplace, or online anywhere globally &mdash; we bring authentic Ashtanga &amp; Ayurvedic wellness directly to you.
+        </p>
+      </div>
+
+      <div class="delivery-grid">
+        <!-- Card 1: Personal Training -->
+        <div class="delivery-card reveal">
+          <div class="delivery-icon-box">🏡</div>
+          <h3>Personal Training</h3>
+          <p class="delivery-offerings">One-on-one customized Ashtanga &amp; therapeutic sessions</p>
+          <div class="delivery-reach">
+            <strong>Service Area:</strong> At your home/society in PAN Ahmedabad &amp; Gandhinagar
+          </div>
+        </div>
+
+        <!-- Card 2: Group Batches -->
+        <div class="delivery-card reveal">
+          <div class="delivery-icon-box">👥</div>
+          <h3>Group Batches</h3>
+          <p class="delivery-offerings">Community sessions &amp; venue classes</p>
+          <div class="delivery-reach">
+            <strong>Service Area:</strong> Divine Life School (Vasna), Vaishnodevi Area, &amp; parks/societies across Ahmedabad &amp; Gandhinagar
+          </div>
+        </div>
+
+        <!-- Card 3: Corporate & Schools -->
+        <div class="delivery-card reveal">
+          <div class="delivery-icon-box">🏫</div>
+          <h3>Corporate &amp; Schools</h3>
+          <p class="delivery-offerings">Employee wellness, desk relief, &amp; student focus sessions</p>
+          <div class="delivery-reach">
+            <strong>Service Area:</strong> Offices, institutions, and schools across Ahmedabad &amp; Gandhinagar
+          </div>
+        </div>
+
+        <!-- Card 4: Live Online -->
+        <div class="delivery-card reveal">
+          <div class="delivery-icon-box">🌐</div>
+          <h3>Live Online</h3>
+          <p class="delivery-offerings">Interactive global batches &amp; 1-on-1 private classes</p>
+          <div class="delivery-reach">
+            <strong>Service Area:</strong> Worldwide (PAN India &amp; International)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- =============================================
        3. SOCIAL PROOF MARQUEE
@@ -3053,7 +3213,7 @@
           <div style="display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem;">
             <div
               style="display:flex;align-items:center;gap:0.75rem;font-size:var(--fs-sm);font-weight:600;color:var(--clr-text)">
-              <span style="color:var(--clr-terracotta);font-size:1.1rem">&#10022;</span> Free Dosha assessment with
+              <span style="color:var(--clr-terracotta);font-size:1.1rem">&#10022;</span> Dosha assessment with
               every new membership
             </div>
             <div
@@ -3083,7 +3243,7 @@
   <!-- =============================================
        5. INTERACTIVE PRICING / SCHEDULE TOGGLE
   ============================================= -->
-  <section id="pricing">
+  <!-- <section id="pricing">
     <div class="blob pricing-blob-1"></div>
     <div class="blob pricing-blob-2"></div>
 
@@ -3104,7 +3264,7 @@
         </div>
       </div>
 
-      <!-- Pricing Content -->
+      /* Pricing Content*/
       <div id="pricing-content">
         <div class="pricing-grid three-col">
 
@@ -3168,7 +3328,7 @@
         </div>
       </div>
 
-      <!-- Schedule Content -->
+      /* Schedule Content*/
       <div id="schedule-content" class="hidden">
         <div class="schedule-grid">
 
@@ -3233,7 +3393,7 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
 
   <!-- =============================================
        6. TESTIMONIALS SLIDER
@@ -3244,7 +3404,7 @@
         <span class="section-label">Student Stories</span>
         <h2 class="section-title">Voices from Our Sangha</h2>
         <p class="section-subtitle" style="margin-inline:auto;margin-top:1rem;">Our community speaks for itself. Real
-          words from real people whose lives have been touched by ADI Astanga Yoga.</p>
+          words from real people whose lives have been touched by ADI Ashtanga Yoga.</p>
       </div>
 
       <div class="testimonials-slider">
@@ -3252,10 +3412,11 @@
 
           <div class="testimonial-card reveal reveal-delay-1" data-slide="0">
             <div class="quote-mark">&ldquo;</div>
-            <p class="testimonial-text">I walked in barely able to touch my toes, convinced yoga was &ldquo;not for
-              me.&rdquo; Eight months later, I&rsquo;ve completed the primary series, my chronic back pain is gone, and
-              I feel 10 years younger. ADI didn&rsquo;t just teach me asanas &mdash; they taught me how to breathe and
-              live.</p>
+            <p class="testimonial-text">Yoga transforms you entirely from within. When my wife and I joined the
+              personalized couple training, I had a very stiff body and she was struggling with anxiety. We started
+              gently with warm-up sessions and meaningful conversations with our teacher. Gradually, we moved into yoga
+              asanas, which completely transformed our bodies and minds. Our perspective completely shifted—we realized
+              yoga is not just a mere physical workout, but a deep spiritual and mental journey</p>
             <div class="testimonial-footer">
               <div class="avatar">RS</div>
               <div>
@@ -3269,14 +3430,15 @@
 
           <div class="testimonial-card reveal reveal-delay-2" data-slide="0">
             <div class="quote-mark">&ldquo;</div>
-            <p class="testimonial-text">The Ayurvedic consultation alone was worth the membership. I learned I&rsquo;m a
-              Pitta-Vata and the teacher tailored my entire practice around that. My digestion improved, my anxiety
-              dropped, and my skin literally glows. The most personalized wellness I&rsquo;ve ever received.</p>
+            <p class="testimonial-text">જ્યારે હું પહેલીવાર આવ્યો ત્યારે માંડ મારા પગને અડી શકતો, મને થતું કે યોગ મારા
+              બસની વાત નથી. પણ આજે આઠ મહિના પછી, મેં પ્રાઇમરી સિરીઝ પૂર્ણ કરી છે, મારો કમરનો જૂનો દુખાવો મટી ગયો છે અને
+              હું પોતાની જાતને ૧૦ વર્ષ યુવાન અનુભવું છું. ADIએ મને માત્ર આસન નથી શીખવ્યા — પણ સાચી રીતે શ્વાસ લેતા અને
+              જીવતા શીખવ્યું છે.</p>
             <div class="testimonial-footer">
               <div class="avatar" style="background:linear-gradient(135deg,#6b21a8,#a855f7)">PM</div>
               <div>
                 <div class="testimonial-name">Priya Mehta</div>
-                <div class="testimonial-role">Nutritionist &amp; Mother of 2 &middot; Chennai</div>
+                <div class="testimonial-role">Nutritionist &amp; Mother of 2 &middot; Gujrat</div>
                 <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span
                     class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
               </div>
@@ -3301,9 +3463,10 @@
 
           <div class="testimonial-card reveal reveal-delay-1" data-slide="1" style="display:none">
             <div class="quote-mark">&ldquo;</div>
-            <p class="testimonial-text">I enrolled my 8-year-old daughter after her teacher mentioned attention
-              difficulties. Within a month, her focus improved noticeably. She now asks to go to yoga every Saturday
-              herself. ADI has given my child a gift that will last a lifetime.</p>
+            <p class="testimonial-text">जब मेरे 8 साल के बेटे की टीचर ने बताया कि उसे ध्यान केंद्रित करने में दिक्कत हो
+              रही है, तब मैंने उसका एडमिशन यहाँ कराया। सिर्फ एक महीने में ही उसकी फोकस करने की क्षमता में चमत्कारी बदलाव
+              आया है। अब तो वह खुद हर शनिवार योग जाने के लिए उत्सुक रहता है। ADI ने मेरे बच्चे को एक ऐसा अनमोल तोहफा
+              दिया है, जो जिंदगी भर उसके काम आएगा।</p>
             <div class="testimonial-footer">
               <div class="avatar" style="background:linear-gradient(135deg,#7c2d12,#f97316)">SN</div>
               <div>
@@ -3333,9 +3496,10 @@
 
           <div class="testimonial-card reveal reveal-delay-3" data-slide="1" style="display:none">
             <div class="quote-mark">&ldquo;</div>
-            <p class="testimonial-text">After my retirement, I thought my body had limits I couldn&rsquo;t cross.
-              ADI&rsquo;s approach proved me wrong. The teachers are endlessly patient and deeply knowledgeable. At 62,
-              I feel stronger, calmer, and more joyful than I did at 40.</p>
+            <p class="testimonial-text">यहाँ आकर मुझे समझ आया कि मेरी बॉडी टाइप 'पित्त-वात' है। टीचर ने मेरी पूरी
+              प्रैक्टिस को इसी के हिसाब से कस्टमाइज़ किया। नतीजा यह हुआ कि मेरा डाइजेशन बेहतर हो गया, एंग्जायटी पूरी तरह
+              खत्म हो गई और मेरी स्किन सचमुच ग्लो करने लगी है। सेहत और तंदुरुस्ती का ऐसा पर्सनलाइज्ड अनुभव मुझे आज तक
+              कहीं नहीं मिला।</p>
             <div class="testimonial-footer">
               <div class="avatar" style="background:linear-gradient(135deg,#78350f,#d97706)">VI</div>
               <div>
@@ -3372,30 +3536,42 @@
           <span class="section-label">Begin Your Journey</span>
           <h2 class="section-title">Ready to Step<br />onto the Mat?</h2>
           <p>Take the first step towards the life you deserve. Fill in the form and our team will reach out within 24
-            hours to schedule your free trial class and complimentary Dosha consultation.</p>
+            hours to schedule your class and consultation.</p>
 
           <div class="contact-benefits">
             <div class="contact-benefit">
-              <div class="benefit-icon">&#127873;</div> First class absolutely free &mdash; no strings attached
+              <div class="benefit-icon">&#129680;</div>Astro Yoga &mdash; Align your physical practice with cosmic
+              rhythms and planetary energies.
             </div>
             <div class="contact-benefit">
-              <div class="benefit-icon">&#127807;</div> Free Ayurvedic Dosha assessment session
+              <div class="benefit-icon">&#127744;</div>Chakra Yoga &mdash; Balance your subtle energy centers to unlock
+              vitality and mental clarity
             </div>
             <div class="contact-benefit">
-              <div class="benefit-icon">&#128203;</div> Personalized practice roadmap from Day 1
+              <div class="benefit-icon">&#129496;</div>Flexible Learning &mdash; Join our immersive sessions either live
+              online or at our offline studio.
             </div>
             <div class="contact-benefit">
-              <div class="benefit-icon">&#129309;</div> Warm, welcoming community &mdash; zero intimidation
+              <div class="benefit-icon">&#127807;</div>Ayurvedic Insights &mdash; Receive an exclusive Dosha assessment
+              session.
             </div>
             <div class="contact-benefit">
-              <div class="benefit-icon">&#128222;</div> WhatsApp support from our senior teacher
+              <div class="benefit-icon">&#128203;</div>Tailored Growth &mdash; Get a personalized practice roadmap from
+              Day 1.
+            </div>
+            <div class="contact-benefit">
+              <div class="benefit-icon">&#129308;</div>Inclusive Space &mdash; Join a warm, welcoming community .
+            </div>
+            <div class="contact-benefit">
+              <div class="benefit-icon">&#128222;</div>Direct Guidance &mdash; Enjoy ongoing WhatsApp support from our
+              senior teacher.
             </div>
           </div>
         </div>
 
         <div class="contact-form-wrap reveal reveal-delay-2">
-          <h3 class="form-title">Claim Your Free Trial</h3>
-          <p class="form-subtitle">Join 1,200+ students who found their practice at ADI.</p>
+          <h3 class="form-title">Apply for Registration</h3>
+          <p class="form-subtitle">Join 1,200+ students who found their practice at ADI Ashtanga Yoga.</p>
 
           <form id="contact-form" novalidate>
             <div class="form-row">
@@ -3427,10 +3603,10 @@
               <label for="interest">I&rsquo;M MOST INTERESTED IN</label>
               <select id="interest" name="interest">
                 <option value="">&mdash; Select a practice &mdash;</option>
+                <option value="Restorative Yoga">Restorative Yoga</option>
                 <option value="Primary Ashtanga Series">Primary Ashtanga Series</option>
                 <option value="Dynamic Vinyasa Flow">Dynamic Vinyasa Flow</option>
                 <option value="Power &amp; Core Yoga">Power &amp; Core Yoga</option>
-                <option value="Restorative Yoga">Restorative Yoga</option>
                 <option value="Yoga Nidra">Yoga Nidra</option>
                 <option value="Nada Yoga">Nada Yoga</option>
                 <option value="Therapeutic Yoga">Therapeutic Yoga</option>
@@ -3476,10 +3652,10 @@
             </div>
 
             <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">
-              <span id="btn-text">Reserve My Free Class &rarr;</span>
+              <span id="btn-text">Reserve My Class &rarr;</span>
               <span id="btn-loading" style="display:none">Opening WhatsApp&hellip;</span>
             </button>
-            <p class="form-privacy">&#128274; Your data is safe. We never spam or share your information.</p>
+            <!-- <p class="form-privacy">&#128274; Your data is safe. We never spam or share your information.</p> -->
           </form>
 
           <div class="form-success" id="form-success">
@@ -3526,7 +3702,7 @@
         <div class="footer-brand">
           <div class="nav-logo">
             <span class="nav-logo-main" style="font-size:1.8rem">ADI &#9775;</span>
-            <span class="nav-logo-sub">Astanga Yoga</span>
+            <span class="nav-logo-sub">Ashtanga Yoga</span>
           </div>
           <p>Founded with a deep reverence for the eight-limbed path of Ashtanga yoga and the healing science of
             Ayurveda. Our mission: to make authentic, transformative practice accessible to everyone.</p>
@@ -3584,9 +3760,15 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:hello@adiastanga.com">hello@adiastanga.com</a></li>
+            <li><a href="mailto:hello@adiAshtanga.com">hello@adiAshtanga.com</a></li>
             <li><a href="tel:+918799622991">+91 87996 22991</a></li>
-            <li><a href="#">14, Vidhyaranyapura Road,<br />Bengaluru, Karnataka 560097</a></li>
+            <li>
+              <strong>Headquarters/Venue Partner:</strong><br />
+              Divine Life School, Vasna, Ahmedabad, Gujarat.<br /><br />
+              <strong>Doorstep &amp; Group Service Areas:</strong><br />
+              PAN Ahmedabad &amp; Gandhinagar (including Vaishnodevi, Bodakdev, Satellite, SG Highway, Kudasan, Gift City).<br /><br />
+              <strong>Online Reach:</strong> Live Worldwide / International.
+            </li>
           </ul>
           <div style="margin-top:1.5rem">
             <div style="font-size:var(--fs-xs);font-weight:700;color:var(--clr-cream);margin-bottom:0.5rem">Class Hours
@@ -3602,7 +3784,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span class="footer-copy">&copy; 2025 ADI Astanga Yoga. All rights reserved. Made with &#128591; in
+        <span class="footer-copy">&copy; 2025 ADI Ashtanga Yoga. All rights reserved. Made with &#128591; in
           India.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
@@ -3749,6 +3931,17 @@
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
+
+      'restorative': {
+        title: 'Restorative Yoga',
+        category: 'Deep Rest & Sound',
+        iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Fully supported floor postures using props to melt deep muscular tension. Calms the sympathetic nervous system and restores deep physical energy.',
+        description: `<b>Restorative Yoga:</b> The Conscious Recharge. Fully supported floor postures using props (bolsters, blankets, blocks) to melt deep muscular tension and quiet mental stress.<br/><br/>Slows down brainwaves, balances the nervous system, and deeply restores physical and mental energy reserves.`,
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
+      },
+
       'vinyasa-flow': {
         title: 'Dynamic Vinyasa Flow',
         category: 'Sweat & Sculpt',
@@ -3764,15 +3957,6 @@
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
         shortDesc: 'High-intensity posture holding focused on building abdominal stability and arm balance strength. Sculpts lean muscle and elevates metabolic energy.',
         description: `<b>Power & Core Yoga:</b> Designed to challenge your muscle stamina and functional core power. This high-energy session targets deep abdominal engagement, balance inversions, posture alignment, and muscular endurance.<br/><br/>Sculpts lean muscle tone while raising metabolic vitality and mental fortitude.`,
-        days: ['Mon - Fri', 'Sat - Sun'],
-        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
-      },
-      'restorative': {
-        title: 'Restorative Yoga',
-        category: 'Deep Rest & Sound',
-        iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
-        shortDesc: 'Fully supported floor postures using props to melt deep muscular tension. Calms the sympathetic nervous system and restores deep physical energy.',
-        description: `<b>Restorative Yoga:</b> The Conscious Recharge. Fully supported floor postures using props (bolsters, blankets, blocks) to melt deep muscular tension and quiet mental stress.<br/><br/>Slows down brainwaves, balances the nervous system, and deeply restores physical and mental energy reserves.`,
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
@@ -4118,8 +4302,8 @@
       const timing = document.getElementById('timing').value;
       const message = document.getElementById('message').value.trim();
 
-      const waText = `Namaste ADI Astanga Yoga! 🙏\n\n` +
-        `I would like to reserve my free trial class with the following details:\n\n` +
+      const waText = `Namaste ADI Ashtanga Yoga! 🙏\n\n` +
+        `I would like to reserve my class with the following details:\n\n` +
         `👤 *Name:* ${firstName} ${lastName}\n` +
         `📧 *Email:* ${email}\n` +
         `📱 *Phone:* ${phone}\n` +

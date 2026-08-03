@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery &amp; Journey | ADI Astanga Yoga</title>
+  <title>Photo Gallery &amp; Journey | ADI Ashtanga Yoga</title>
   <meta name="description"
-    content="Explore the sacred photo gallery of ADI Astanga Yoga. Discover traditional Ashtanga asanas, lotus meditation, founders Mehul Shah & Rashesh Raval, and authentic student stories." />
+    content="Explore the sacred photo gallery of ADI Ashtanga Yoga. Discover traditional Ashtanga asanas, lotus meditation, founders Mehul Shah & Rashesh Raval, and authentic student stories." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap"
     rel="stylesheet" />
+  <link rel="icon" href="Assest/logo.png" type="image/x-ico">
 
   <style>
     /* =============================================
@@ -552,15 +553,14 @@
       box-shadow: 0 6px 20px rgba(156, 68, 25, 0.35);
     }
 
-    /* Masonry / Gallery Card Layout */
+    /* Gallery Card Grid Layout */
     .gallery-masonry {
-      columns: 3 320px;
-      column-gap: 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
     }
 
     .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 1.8rem;
       position: relative;
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -569,12 +569,44 @@
       box-shadow: var(--shadow-sm);
       cursor: pointer;
       transition: var(--transition-slow);
+      display: flex;
+      flex-direction: column;
     }
 
     .gallery-item:hover {
       border-color: var(--clr-terracotta);
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
+    }
+
+    /* Card title strip */
+    .card-info-strip {
+      padding: 0.75rem 1rem;
+      background: var(--clr-cream);
+      border-top: 1px solid var(--clr-glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .card-strip-category {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-amber);
+      white-space: nowrap;
+    }
+
+    .card-strip-title {
+      font-family: var(--ff-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--clr-dark);
+      line-height: 1.25;
+      flex: 1;
     }
 
     .gallery-item-img-wrap {
@@ -604,10 +636,11 @@
     .gallery-overlay {
       position: absolute;
       inset: 0;
+      object-fit: cover;
       background: linear-gradient(0deg, rgba(26, 18, 9, 0.92) 0%, rgba(26, 18, 9, 0.4) 60%, transparent 100%);
       opacity: 0;
       transition: var(--transition);
-      display: flex;
+      display: grid;
       flex-direction: column;
       justify-content: flex-end;
       padding: 1.8rem;
@@ -684,20 +717,21 @@
     .card-carousel-slide {
       min-width: 100%;
       position: relative;
-      background: rgba(246, 245, 240, 0.9);
+      background: var(--clr-dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
       overflow: hidden;
+      height: 240px;
     }
 
     .card-carousel-slide img {
       width: 100%;
-      max-height: 280px;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       transition: transform 0.4s ease;
-      filter: drop-shadow(0 4px 12px rgba(156, 68, 25, 0.15));
+      display: block;
     }
 
     .gallery-item:hover .card-carousel-slide img {
@@ -734,8 +768,15 @@
       background: var(--clr-terracotta);
     }
 
-    .card-carousel-prev { left: 10px; }
-    .card-carousel-next { right: 54px; } /* shifted left of zoom badge */
+    .card-carousel-prev {
+      left: 10px;
+    }
+
+    .card-carousel-next {
+      right: 54px;
+    }
+
+    /* shifted left of zoom badge */
 
     /* Dot indicators */
     .card-carousel-dots {
@@ -1255,7 +1296,7 @@
     @media (max-width: 1024px) {
 
       .gallery-masonry {
-        columns: 2 280px;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid,
@@ -1287,7 +1328,7 @@
 
     @media (max-width: 768px) {
       .gallery-masonry {
-        columns: 1;
+        grid-template-columns: 1fr;
       }
 
       .nav-links {
@@ -1318,7 +1359,7 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-main">ADI Astanga Yoga</span>
+        <span class="nav-logo-main">ADI Ashtanga Yoga</span>
         <span class="nav-logo-sub">Photo Gallery &amp; Journey</span>
       </a>
 
@@ -1327,7 +1368,7 @@
         <a href="index.html#services">Practices</a>
         <a href="chakra.html">Chakras</a>
         <a href="gallery.html" class="active">Gallery</a>
-        <a href="index.html#pricing">Plans</a>
+        <!-- <a href="index.html#pricing">Plans</a> -->
         <a href="index.html#testimonials">Stories</a>
         <a href="index.html#contact" class="btn btn-primary" style="margin-left:0.5rem">Begin Journey</a>
       </div>
@@ -1345,7 +1386,7 @@
     <a href="index.html#services" class="mobile-nav-link">Practices</a>
     <a href="chakra.html" class="mobile-nav-link">Chakras</a>
     <a href="gallery.html" class="mobile-nav-link">Gallery</a>
-    <a href="index.html#pricing" class="mobile-nav-link">Plans</a>
+    <!-- <a href="index.html#pricing" class="mobile-nav-link">Plans</a> -->
     <a href="index.html#testimonials" class="mobile-nav-link">Stories</a>
     <a href="index.html#contact" class="btn btn-primary" style="text-align:center;justify-content:center;">Begin Your
       Journey &rarr;</a>
@@ -1359,7 +1400,7 @@
       <span class="section-label">Sacral Visual Collection</span>
       <h1 class="hero-title-main">Visualizing The Sacred Yogic Journey</h1>
       <p class="hero-sub-text">
-        Welcome to the photo gallery of ADI Astanga Yoga. Experience the harmony of ancient Ashtanga asanas,
+        Welcome to the photo gallery of ADI Ashtanga Yoga. Experience the harmony of ancient Ashtanga asanas,
         mindful meditation, and the transformative energy of our sacred sanctuary.
       </p>
 
@@ -1430,7 +1471,7 @@
       <div class="gallery-masonry" id="gallery-masonry">
 
         <!-- Card 1: Padmasana (Lotus Pose) -->
-        <div class="gallery-item reveal" data-category="meditation"
+        <!-- <div class="gallery-item reveal" data-category="meditation"
           data-title="Padmasana (Lotus Pose)"
           data-desc="The iconic lotus pose that grounds prana energy, steadies the spine, and prepares the mind for deep meditation.">
           <div class="card-carousel" data-carousel>
@@ -1447,336 +1488,558 @@
             <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span><h3 class="overlay-title">Padmasana (Lotus Pose)</h3><p class="overlay-desc">Grounding prana energy for deep contemplation.</p></div>
           </div>
         </div>
-
+ -->
         <!-- Card 2: Trikonasana -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Trikonasana (Triangle Pose)"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Trikonasana (Triangle Pose)"
           data-desc="Opens the hips, stretches the hamstrings, and stimulates spinal circulation for enhanced stamina.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/Trikonasana.jpeg" alt="Trikonasana Triangle Pose" /></div>
-              <div class="card-carousel-slide"><img src="Assest/poses/012-yoga-12.png" alt="Yoga Triangle Variation" /></div>
+              <div class="card-carousel-slide"><img src="Assest/rashesh/Trikonasana.jpeg"
+                  alt="Trikonasana Triangle Pose" /></div>
+              <div class="card-carousel-slide"><img src="Assest/poses/012-yoga-12.png" alt="Yoga Triangle Variation" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/poses/035-yoga-34.png" alt="Standing Pose" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Trikonasana (Triangle)</h3><p class="overlay-desc">Building lateral stability and spinal fluidity.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Trikonasana (Triangle)</h3>
+              <p class="overlay-desc">Building lateral stability and spinal fluidity.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 3: Bakasana (Crow Pose) -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Bakasana (Crow Pose)"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Bakasana (Crow Pose)"
           data-desc="Core and arm strength balance pose that develops deep mental focus and fearlessness.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (3).jpeg" alt="Bakasana Crow Pose" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (3).jpeg" alt="Bakasana Crow Pose" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/poses/040-yoga-39.png" alt="Arm Balance" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/052-yoga-51.png" alt="Core Balance Pose" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Bakasana (Crow Pose)</h3><p class="overlay-desc">Cultivating core strength and balance.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Bakasana (Crow Pose)</h3>
+              <p class="overlay-desc">Cultivating core strength and balance.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 4: Chakra System Geometry -->
-        <div class="gallery-item reveal" data-category="chakras"
-          data-title="Chakra System Geometry"
+        <div class="gallery-item reveal" data-category="chakras" data-title="Chakra System Geometry"
           data-desc="The sacred geometry of the 7 energy vortexes mapped from Sahasrara (Crown) down to Muladhara (Root).">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/Sahasrara &amp; Chakra Emblems.jpeg" alt="Chakra Symbols Collage" /></div>
+              <div class="card-carousel-slide"><img src="Assest/rashesh/Sahasrara &amp; Chakra Emblems.jpeg"
+                  alt="Chakra Symbols Collage" /></div>
               <div class="card-carousel-slide"><img src="Assest/chakra.png" alt="Chakra Diagram" /></div>
-              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-1.png" alt="Muladhara Root Chakra" /></div>
-              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-4.png" alt="Anahata Heart Chakra" /></div>
-              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-7.png" alt="Sahasrara Crown Chakra" /></div>
+              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-1.png" alt="Muladhara Root Chakra" />
+              </div>
+              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-4.png" alt="Anahata Heart Chakra" />
+              </div>
+              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-7.png" alt="Sahasrara Crown Chakra" />
+              </div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span><h3 class="overlay-title">Chakra System Geometry</h3><p class="overlay-desc">Mapping the subtle vortexes along the spine.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span>
+              <h3 class="overlay-title">Chakra System Geometry</h3>
+              <p class="overlay-desc">Mapping the subtle vortexes along the spine.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 5: Academy Heritage Seal -->
-        <div class="gallery-item reveal" data-category="academy"
-          data-title="ADI Astanga Academy Seal"
+        <div class="gallery-item reveal" data-category="academy" data-title="ADI Ashtanga Academy Seal"
           data-desc="Our sacred seal representing authentic Ashtanga wisdom, Ayurvedic harmony, and community.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (4).jpeg" alt="ADI Astanga Yoga Academy Emblem" /></div>
-              <div class="card-carousel-slide"><img src="Assest/logo.png" alt="ADI Astanga Logo" /></div>
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg" alt="Teacher Session" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (4).jpeg"
+                  alt="ADI Ashtanga Yoga Academy Emblem" /></div>
+              <div class="card-carousel-slide"><img src="Assest/logo.png" alt="ADI Ashtanga Logo" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg" alt="Teacher Session" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span><h3 class="overlay-title">Academy Heritage Seal</h3><p class="overlay-desc">Honoring ancient tradition in a modern sanctuary.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span>
+              <h3 class="overlay-title">Academy Heritage Seal</h3>
+              <p class="overlay-desc">Honoring ancient tradition in a modern sanctuary.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 6: Dhyana (Silent Meditation) -->
-        <div class="gallery-item reveal" data-category="meditation"
-          data-title="Dhyana (Silent Meditation)"
+        <div class="gallery-item reveal" data-category="meditation" data-title="Dhyana (Silent Meditation)"
           data-desc="Quiet contemplation focusing on breath retention (Kumbhaka) to quiet mental chatter.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (5).jpeg" alt="Silent Meditation Pose" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (5).jpeg" alt="Silent Meditation Pose" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/109-meditation.png" alt="Meditation Lotus" /></div>
               <div class="card-carousel-slide"><img src="Assest/111-meditation-1.png" alt="Meditation Icon" /></div>
-              <div class="card-carousel-slide"><img src="Assest/103-lotus-position-3.png" alt="Lotus Meditation" /></div>
+              <div class="card-carousel-slide"><img src="Assest/103-lotus-position-3.png" alt="Lotus Meditation" />
+              </div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span><h3 class="overlay-title">Dhyana Meditation</h3><p class="overlay-desc">Sinking into profound inner tranquility.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span>
+              <h3 class="overlay-title">Dhyana Meditation</h3>
+              <p class="overlay-desc">Sinking into profound inner tranquility.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 7: Sirsasana (Headstand) -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Sirsasana (Headstand)"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Sirsasana (Headstand)"
           data-desc="Inversion pose that improves brain oxygenation, calms the mind, and stimulates the pineal gland.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/Sirsasana .jpeg" alt="Sirsasana Headstand Pose" /></div>
+              <div class="card-carousel-slide"><img src="Assest/rashesh/Sirsasana .jpeg"
+                  alt="Sirsasana Headstand Pose" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/068-yoga-67.png" alt="Inversion Pose" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/081-yoga-79.png" alt="Advanced Inversion" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Sirsasana (Headstand)</h3><p class="overlay-desc">Reversing gravity for mental clarity.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Sirsasana (Headstand)</h3>
+              <p class="overlay-desc">Reversing gravity for mental clarity.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 8: Kundalini Prana Flow -->
-        <div class="gallery-item reveal" data-category="chakras"
-          data-title="Kundalini Prana Flow"
+        <div class="gallery-item reveal" data-category="chakras" data-title="Kundalini Prana Flow"
           data-desc="Visualizing the luminous flow of Kundalini energy rising along the Sushumna Nadi.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (6).jpeg" alt="Chakra Yogi Silhouette" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (6).jpeg" alt="Chakra Yogi Silhouette" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/chakras/chakra-2.png" alt="Svadhisthana Chakra" /></div>
-              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-3.png" alt="Manipura Solar Plexus" /></div>
+              <div class="card-carousel-slide"><img src="Assest/chakras/chakra-3.png" alt="Manipura Solar Plexus" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/sahasrara.png" alt="Sahasrara Crown" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span><h3 class="overlay-title">Kundalini Prana Flow</h3><p class="overlay-desc">Awakening latent spiritual energy.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span>
+              <h3 class="overlay-title">Kundalini Prana Flow</h3>
+              <p class="overlay-desc">Awakening latent spiritual energy.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 9: Vrikshasana (Tree Pose) -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Vrikshasana (Tree Pose)"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Vrikshasana (Tree Pose)"
           data-desc="Grounding posture that strengthens foot arches, improves equilibrium, and calms emotional anxiety.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (8).jpeg" alt="Vrikshasana Tree Pose" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (8).jpeg" alt="Vrikshasana Tree Pose" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/poses/004-yoga-4.png" alt="Balance Pose" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/022-yoga-21.png" alt="Standing Balance" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Vrikshasana (Tree Pose)</h3><p class="overlay-desc">Rooted in stability, reaching for light.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Vrikshasana (Tree Pose)</h3>
+              <p class="overlay-desc">Rooted in stability, reaching for light.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 10: Virabhadrasana II (Warrior II) -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Virabhadrasana II (Warrior II)"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Virabhadrasana II (Warrior II)"
           data-desc="Builds lower body stamina, expands chest capacity, and fosters inner courage.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/Virabhadrasana .jpeg" alt="Warrior II Pose" /></div>
+              <div class="card-carousel-slide"><img src="Assest/rashesh/Virabhadrasana .jpeg" alt="Warrior II Pose" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/poses/007-yoga-7.png" alt="Warrior Pose Icon" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/030-yoga-29.png" alt="Power Yoga Pose" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Virabhadrasana II (Warrior II)</h3><p class="overlay-desc">Steadfast determination and focus.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Virabhadrasana II (Warrior II)</h3>
+              <p class="overlay-desc">Steadfast determination and focus.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 11: Pranayama Mudra -->
-        <div class="gallery-item reveal" data-category="meditation"
-          data-title="Pranayama Mudra Practice"
+        <div class="gallery-item reveal" data-category="meditation" data-title="Pranayama Mudra Practice"
           data-desc="Harmonizing the left (Ida) and right (Pingala) pranic channels through Chin &amp; Vishnu Mudras.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (9).jpeg" alt="Pranayama Mudra Practice" /></div>
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (12).jpeg" alt="Nadi Shodhan" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (9).jpeg"
+                  alt="Pranayama Mudra Practice" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (12).jpeg" alt="Nadi Shodhan" /></div>
               <div class="card-carousel-slide"><img src="Assest/108-lotus-position-5.png" alt="Seated Mudra" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span><h3 class="overlay-title">Pranayama Mudra</h3><p class="overlay-desc">Balancing cosmic solar and lunar energies.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span>
+              <h3 class="overlay-title">Pranayama Mudra</h3>
+              <p class="overlay-desc">Balancing cosmic solar and lunar energies.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 12: Sanctuary Atmosphere -->
-        <div class="gallery-item reveal" data-category="academy"
-          data-title="Sanctuary Practice Floor"
+        <div class="gallery-item reveal" data-category="academy" data-title="Sanctuary Practice Floor"
           data-desc="Our serene studio space designed with natural wood, warm lighting, and acoustic tranquility.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/Sanctuary Atmosphere.jpeg" alt="Studio Practice Floor" /></div>
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (1).jpeg" alt="Community Circle" /></div>
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg" alt="Guru Darshan" /></div>
+              <div class="card-carousel-slide"><img src="Assest/rashesh/Sanctuary Atmosphere.jpeg"
+                  alt="Studio Practice Floor" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (1).jpeg" alt="Community Circle" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg" alt="Guru Darshan" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span><h3 class="overlay-title">Sanctuary Atmosphere</h3><p class="overlay-desc">A peaceful haven for daily self-discovery.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span>
+              <h3 class="overlay-title">Sanctuary Atmosphere</h3>
+              <p class="overlay-desc">A peaceful haven for daily self-discovery.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 13: Community Practice Circle -->
-        <div class="gallery-item reveal" data-category="academy"
-          data-title="Community Practice Circle"
+        <div class="gallery-item reveal" data-category="academy" data-title="Community Practice Circle"
           data-desc="Our dedicated students gather in a spirit of shared growth, satsang, and mutual encouragement on the mat.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (1).jpeg" alt="ADI Yoga Community Circle" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (1).jpeg"
+                  alt="ADI Yoga Community Circle" /></div>
               <div class="card-carousel-slide"><img src="Assest/Rashesh-Raval.jpeg" alt="Rashesh Raval" /></div>
               <div class="card-carousel-slide"><img src="Assest/Mehul-shah.jpeg" alt="Mehul Shah" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span><h3 class="overlay-title">Community Practice Circle</h3><p class="overlay-desc">Unity, satsang, and shared transformation.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span>
+              <h3 class="overlay-title">Community Practice Circle</h3>
+              <p class="overlay-desc">Unity, satsang, and shared transformation.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 14: Ashtanga Flow -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Ashtanga Flow Series"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Ashtanga Flow Series"
           data-desc="Dynamic vinyasa flow connecting breath to movement in the traditional Ashtanga sequence for heat and strength.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (10).jpeg" alt="Ashtanga Vinyasa Flow" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (10).jpeg" alt="Ashtanga Vinyasa Flow" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/poses/001-yoga-1.png" alt="Yoga Flow 1" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/002-yoga-2.png" alt="Yoga Flow 2" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/003-yoga-3.png" alt="Yoga Flow 3" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Ashtanga Flow</h3><p class="overlay-desc">Breath-linked movement building internal fire.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Ashtanga Flow</h3>
+              <p class="overlay-desc">Breath-linked movement building internal fire.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 15: Nadi Shodhan -->
-        <div class="gallery-item reveal" data-category="meditation"
-          data-title="Nadi Shodhan Pranayama"
+        <div class="gallery-item reveal" data-category="meditation" data-title="Nadi Shodhan Pranayama"
           data-desc="Alternate nostril breathing to balance left-right brain hemispheres and calm the nervous system.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (12).jpeg" alt="Nadi Shodhan Pranayama" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (12).jpeg" alt="Nadi Shodhan Pranayama" />
+              </div>
               <div class="card-carousel-slide"><img src="Assest/095-lotus-position-2.png" alt="Breathing Lotus" /></div>
               <div class="card-carousel-slide"><img src="Assest/113-lotus-position-8.png" alt="Pranayama Pose" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span><h3 class="overlay-title">Nadi Shodhan</h3><p class="overlay-desc">Balancing solar and lunar prana channels.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span>
+              <h3 class="overlay-title">Nadi Shodhan</h3>
+              <p class="overlay-desc">Balancing solar and lunar prana channels.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 16: Guru Darshan -->
-        <div class="gallery-item reveal" data-category="academy"
-          data-title="Guru Darshan Session"
+        <div class="gallery-item reveal" data-category="academy" data-title="Guru Darshan Session"
           data-desc="Intimate group session where Rashesh Raval shares alignment wisdom, Ayurvedic tips, and the philosophy of Yoga sutras.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg" alt="Teacher Student Session" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (13).jpeg"
+                  alt="Teacher Student Session" /></div>
               <div class="card-carousel-slide"><img src="Assest/Rashesh-Raval.jpeg" alt="Rashesh Raval Teacher" /></div>
               <div class="card-carousel-slide"><img src="Assest/Mehul-shah.jpeg" alt="Mehul Shah Teacher" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span><h3 class="overlay-title">Guru Darshan</h3><p class="overlay-desc">Ancient wisdom shared, heart to heart.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Academy &amp; Culture</span>
+              <h3 class="overlay-title">Guru Darshan</h3>
+              <p class="overlay-desc">Ancient wisdom shared, heart to heart.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 17: Surya Namaskar -->
-        <div class="gallery-item reveal" data-category="asanas"
-          data-title="Surya Namaskar Flow"
+        <div class="gallery-item reveal" data-category="asanas" data-title="Surya Namaskar Flow"
           data-desc="Sun Salutation series â€” the foundational sequence of ADI Ashtanga linking 12 postures in one synchronized breath-movement rhythm.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (14).jpeg" alt="Surya Namaskar Sequence" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (14).jpeg"
+                  alt="Surya Namaskar Sequence" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/005-yoga-5.png" alt="Sun Salute Step 1" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/008-yoga-8.png" alt="Sun Salute Step 2" /></div>
               <div class="card-carousel-slide"><img src="Assest/poses/009-yoga-9.png" alt="Sun Salute Step 3" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span><h3 class="overlay-title">Surya Namaskar</h3><p class="overlay-desc">12 postures honouring the life-giving sun.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Ashtanga Poses</span>
+              <h3 class="overlay-title">Surya Namaskar</h3>
+              <p class="overlay-desc">12 postures honouring the life-giving sun.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 18: Mandala Yantra -->
-        <div class="gallery-item reveal" data-category="chakras"
-          data-title="Mandala Yantra Meditation"
+        <div class="gallery-item reveal" data-category="chakras" data-title="Mandala Yantra Meditation"
           data-desc="Sacred geometric yantra used as a visual anchor for Trataka to sharpen single-pointed concentration.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (15).jpeg" alt="Mandala Yantra Practice" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (15).jpeg"
+                  alt="Mandala Yantra Practice" /></div>
               <div class="card-carousel-slide"><img src="Assest/mandala.jpg" alt="Sacred Mandala" /></div>
               <div class="card-carousel-slide"><img src="Assest/chakras/chakra-5.png" alt="Vishuddha Chakra" /></div>
               <div class="card-carousel-slide"><img src="Assest/chakras/chakra-6.png" alt="Ajna Third Eye" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span><h3 class="overlay-title">Mandala Yantra</h3><p class="overlay-desc">Sacred geometry for one-pointed awareness.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Chakras &amp; Energy</span>
+              <h3 class="overlay-title">Mandala Yantra</h3>
+              <p class="overlay-desc">Sacred geometry for one-pointed awareness.</p>
+            </div>
           </div>
         </div>
 
         <!-- Card 19: Evening Sadhana -->
-        <div class="gallery-item reveal" data-category="meditation"
-          data-title="Evening Sadhana Practice"
+        <div class="gallery-item reveal" data-category="meditation" data-title="Evening Sadhana Practice"
           data-desc="Students in collective twilight meditation â€” the most auspicious time for inward reflection according to Vedic tradition.">
           <div class="card-carousel" data-carousel>
             <div class="card-carousel-track">
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (17).jpeg" alt="Evening Sadhana Group" /></div>
-              <div class="card-carousel-slide"><img src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (5).jpeg" alt="Dhyana Meditation" /></div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (17).jpeg" alt="Evening Sadhana Group" />
+              </div>
+              <div class="card-carousel-slide"><img
+                  src="Assest/rashesh/WhatsApp Image 2026-07-28 at 1.05.10 PM (5).jpeg" alt="Dhyana Meditation" /></div>
               <div class="card-carousel-slide"><img src="Assest/110-lotus-position-6.png" alt="Evening Lotus" /></div>
               <div class="card-carousel-slide"><img src="Assest/114-lotus-position-9.png" alt="Meditation Icon" /></div>
             </div>
-            <button class="card-carousel-btn card-carousel-prev" onclick="cardCarouselPrev(this,event)">&#10094;</button>
-            <button class="card-carousel-btn card-carousel-next" onclick="cardCarouselNext(this,event)">&#10095;</button>
+            <button class="card-carousel-btn card-carousel-prev"
+              onclick="cardCarouselPrev(this,event)">&#10094;</button>
+            <button class="card-carousel-btn card-carousel-next"
+              onclick="cardCarouselNext(this,event)">&#10095;</button>
             <div class="card-carousel-dots"></div>
-            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span><h3 class="overlay-title">Evening Sadhana</h3><p class="overlay-desc">Twilight practice â€” the most auspicious hour.</p></div>
+            <div class="zoom-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg></div>
+            <div class="gallery-overlay"><span class="overlay-category">Meditative Lotus</span>
+              <h3 class="overlay-title">Evening Sadhana</h3>
+              <p class="overlay-desc">Twilight practice â€” the most auspicious hour.</p>
+            </div>
           </div>
         </div>
 
@@ -1808,10 +2071,10 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text-content reveal">
-          <span class="section-label">About ADI Astanga Yoga</span>
+          <span class="section-label">About ADI Ashtanga Yoga</span>
           <h2>Where Ancient Wisdom Meets Purposeful Practice</h2>
           <p>
-            At ADI Astanga Yoga, we honor the traditional eight-limbed path of Ashtanga yoga as taught by the ancient
+            At ADI Ashtanga Yoga, we honor the traditional eight-limbed path of Ashtanga yoga as taught by the ancient
             sages. Our academy is dedicated to guiding every seeker through a progressive physical, mental, and
             spiritual transformation.
           </p>
@@ -1823,7 +2086,7 @@
         </div>
 
         <div class="about-card-hero reveal">
-          <img src="Assest/yoga (39).png" alt="ADI Astanga Yoga Studio Journey" />
+          <img src="Assest/yoga (39).png" alt="ADI Ashtanga Yoga Studio Journey" />
         </div>
       </div>
 
@@ -2028,7 +2291,7 @@
       <p class="section-sub" style="margin-bottom: 2rem;">
         Join our vibrant community of yogis today. Experience traditional Ashtanga yoga and holistic Ayurvedic living.
       </p>
-      <a href="index.html#contact" class="btn btn-primary">Join ADI Astanga Yoga &rarr;</a>
+      <a href="index.html#contact" class="btn btn-primary">Join ADI Ashtanga Yoga &rarr;</a>
     </div>
   </section>
 
@@ -2036,12 +2299,12 @@
     <div class="container footer-inner">
       <div>
         <div class="nav-logo">
-          <span class="nav-logo-main" style="color: var(--clr-cream);">ADI Astanga Yoga</span>
+          <span class="nav-logo-main" style="color: var(--clr-cream);">ADI Ashtanga Yoga</span>
           <span class="nav-logo-sub">Ancient Wisdom &middot; Modern Wellness</span>
         </div>
       </div>
       <div>
-        &copy; 2025 ADI Astanga Yoga. All rights reserved.
+        &copy; 2025 ADI Ashtanga Yoga. All rights reserved.
       </div>
     </div>
   </footer>
