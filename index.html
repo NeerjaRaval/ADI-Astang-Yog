@@ -918,9 +918,8 @@
     }
 
     .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
@@ -934,9 +933,6 @@
       transition: var(--transition);
       cursor: default;
 
-      flex: 1 1 calc(25% - 24px);
-      min-width: 280px;
-      max-width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -965,11 +961,48 @@
       border-color: rgba(156, 68, 25, 0.25);
     }
 
-    /* Highlighted Mastery Card Styling */
+    /* Highlighted Mastery Card Styling — full-width banner row */
     .service-card.highlighted {
+      grid-column: 1 / -1;
       border: 1.8px solid var(--clr-gold);
-      box-shadow: 0 6px 20px rgba(171, 128, 58, 0.12);
-      background: linear-gradient(to bottom, #ffffff, #fcfbfa);
+      box-shadow: 0 6px 24px rgba(171, 128, 58, 0.14);
+      background: linear-gradient(135deg, #fffdf8 0%, #fdf6e8 60%, #fffdf8 100%);
+
+      /* Horizontal layout inside the wide card */
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2.4rem 2.8rem;
+    }
+
+    .service-card.highlighted .service-card-icon {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      margin-bottom: 0;
+      background: linear-gradient(135deg, var(--clr-gold), var(--clr-amber));
+    }
+
+    .service-card.highlighted .service-card-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: white;
+    }
+
+    .service-card.highlighted .mastery-badge {
+      top: 14px;
+      right: 18px;
+    }
+
+    /* Text + controls take remaining space */
+    .service-card.highlighted .card-content-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card.highlighted .service-card-title {
+      font-size: var(--fs-xl);
     }
 
     .service-card.highlighted::before {
@@ -979,7 +1012,7 @@
     }
 
     .service-card.highlighted:hover {
-      box-shadow: 0 12px 35px rgba(219, 113, 27, 0.22);
+      box-shadow: 0 16px 40px rgba(219, 113, 27, 0.22);
       border-color: var(--clr-amber);
     }
 
@@ -2406,6 +2439,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .service-card.highlighted {
+        grid-column: 1 / -1;
+      }
+
       .pricing-grid.three-col {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -2471,6 +2508,18 @@
 
       .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .service-card.highlighted {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+      }
+
+      .service-card.highlighted .service-card-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 0;
       }
 
       .pricing-grid.three-col {
@@ -4150,7 +4199,8 @@
 
       Object.keys(SERVICES_DATA).forEach((key, index) => {
         const item = SERVICES_DATA[key];
-        const isFeatured = index % 2 === 1;
+        // featured (dark) only for non-highlighted odd cards
+        const isFeatured = !item.isHighlighted && (index % 2 === 1);
         const slug = categorySlugs[item.category] || '';
 
         // Generate timing select options
@@ -4168,14 +4218,7 @@
 
         const badgeHtml = item.isHighlighted ? `<div class="mastery-badge">Mastery Practice</div>` : '';
 
-        card.innerHTML = `
-          ${badgeHtml}
-          <div class="service-card-icon">
-            ${item.iconSvg}
-          </div>
-          <h3 class="service-card-title">${item.title}</h3>
-          <p class="service-card-desc">${item.shortDesc}</p>
-          
+        const selectionAndButtons = `
           <div class="card-selection-row">
             <div class="card-days-selector">
               <label class="card-input-label">Days</label>
@@ -4184,7 +4227,6 @@
                 <option value="Sat - Sun">Sat – Sun</option>
               </select>
             </div>
-
             <div class="card-timing-selector">
               <label class="card-input-label">Time</label>
               <select class="card-timing-select">
@@ -4192,12 +4234,29 @@
               </select>
             </div>
           </div>
-          
           <div class="card-buttons-row">
             <button type="button" class="btn-card-details" onclick="openServiceModal('${key}')">Details</button>
             <button type="button" class="btn btn-primary btn-card-book" onclick="bookFromCard('${key}')">Book Now &rarr;</button>
-          </div>
-        `;
+          </div>`;
+
+        if (item.isHighlighted) {
+          // Wide horizontal layout: icon on left, content on right
+          card.innerHTML = `
+            ${badgeHtml}
+            <div class="service-card-icon">${item.iconSvg}</div>
+            <div class="card-content-wrap">
+              <h3 class="service-card-title">${item.title}</h3>
+              <p class="service-card-desc">${item.shortDesc}</p>
+              ${selectionAndButtons}
+            </div>`;
+        } else {
+          card.innerHTML = `
+            ${badgeHtml}
+            <div class="service-card-icon">${item.iconSvg}</div>
+            <h3 class="service-card-title">${item.title}</h3>
+            <p class="service-card-desc">${item.shortDesc}</p>
+            ${selectionAndButtons}`;
+        }
         grid.appendChild(card);
       });
     }
