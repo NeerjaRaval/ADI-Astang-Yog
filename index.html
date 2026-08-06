@@ -965,6 +965,40 @@
       border-color: rgba(156, 68, 25, 0.25);
     }
 
+    /* Highlighted Mastery Card Styling */
+    .service-card.highlighted {
+      border: 1.8px solid var(--clr-gold);
+      box-shadow: 0 6px 20px rgba(171, 128, 58, 0.12);
+      background: linear-gradient(to bottom, #ffffff, #fcfbfa);
+    }
+
+    .service-card.highlighted::before {
+      background: linear-gradient(90deg, var(--clr-gold), var(--clr-amber));
+      height: 4px;
+      transform: scaleX(1);
+    }
+
+    .service-card.highlighted:hover {
+      box-shadow: 0 12px 35px rgba(219, 113, 27, 0.22);
+      border-color: var(--clr-amber);
+    }
+
+    .mastery-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      background: linear-gradient(135deg, var(--clr-gold), var(--clr-amber));
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 2px 8px rgba(171, 128, 58, 0.25);
+      z-index: 10;
+    }
+
     .service-card-icon {
       width: 60px;
       height: 60px;
@@ -1376,6 +1410,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      text-wrap-style: balance;
     }
 
 
@@ -1388,8 +1423,8 @@
     }
 
     .modal-desc-box {
-      height: 150px;
-      overflow: auto;
+      height: 200px;
+      overflow: hidden; 
       font-size: var(--fs-sm);
       color: var(--clr-text-muted);
       line-height: 1.8;
@@ -1873,7 +1908,8 @@
     }
 
     .testimonial-card {
-      min-height: 300px;
+      height: 600px;
+      min-height: 450px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -2700,15 +2736,21 @@
 
         <div class="hero-content">
           <!-- SEO H1: Main Heading for Search Optimization -->
-          <h1 class="hero-heading" style="font-size: clamp(1.8rem, 4.2vw, 2.8rem); line-height: 1.25; margin-bottom: 1.5rem;">
-            ADI Ashtanga Yoga &mdash; <span style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); display: block; font-weight: 500; margin-top: 0.5rem; color: var(--clr-amber); line-height: 1.4;">Authentic Personal, Group &amp; Corporate Yoga in Ahmedabad, Gandhinagar &amp; Online Worldwide</span>
+          <h1 class="hero-heading"
+            style="font-size: clamp(1.8rem, 4.2vw, 2.8rem); line-height: 1.25; margin-bottom: 1.5rem;">
+            ADI Ashtanga Yoga &mdash; <span
+              style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); display: block; font-weight: 500; margin-top: 0.5rem; color: var(--clr-amber); line-height: 1.4;">Authentic
+              Personal, Group &amp; Corporate Yoga in Ahmedabad, Gandhinagar &amp; Online Worldwide</span>
           </h1>
 
           <!-- SEO Tagline / Sub-headline with targeted keywords -->
           <p class="hero-sub" style="font-size: var(--fs-md); line-height: 1.7; margin-bottom: 2rem;">
-            Transformative Ashtanga &amp; Ayurvedic Yoga tailored for all age groups. Offering home personal training, local group batches, school &amp; corporate wellness programs across Ahmedabad &amp; Gandhinagar &mdash; and live online sessions globally.
+            Transformative Ashtanga &amp; Ayurvedic Yoga tailored for all age groups. Offering home personal training,
+            local group batches, school &amp; corporate wellness programs across Ahmedabad &amp; Gandhinagar &mdash; and
+            live online sessions globally.
           </p>
-          <p class="hero-sub" style="font-size: 0.9rem; opacity: 0.85; margin-top: -1.5rem; margin-bottom: 2.5rem;">तपस (अनुशासन और दृढ़ संकल्प) के इस अग्निपथ के माध्यम से, अशुद्धियाँ पूरी तरह से नष्ट हो
+          <p class="hero-sub" style="font-size: 0.9rem; opacity: 0.85; margin-top: -1.5rem; margin-bottom: 2.5rem;">तपस
+            (अनुशासन और दृढ़ संकल्प) के इस अग्निपथ के माध्यम से, अशुद्धियाँ पूरी तरह से नष्ट हो
             जाती हैं, जिससे भौतिक शरीर और इंद्रियों पर पूर्ण विजय (सिद्धि) प्राप्त होती है। <b>तपस</b> से <b>आनंद</b> की
             अवस्था तक की यात्रा।</p>
 
@@ -2792,7 +2834,8 @@
         <span class="section-label">Flexible Delivery Modes</span>
         <h2 class="section-title">Where &amp; How You Can Train With Us</h2>
         <p class="section-subtitle" style="margin-inline:auto;margin-top:1rem; max-width: 800px;">
-          Whether at your home, in our group venues, at your workplace, or online anywhere globally &mdash; we bring authentic Ashtanga &amp; Ayurvedic wellness directly to you.
+          Whether at your home, in our group venues, at your workplace, or online anywhere globally &mdash; we bring
+          authentic Ashtanga &amp; Ayurvedic wellness directly to you.
         </p>
       </div>
 
@@ -2813,7 +2856,8 @@
           <h3>Group Batches</h3>
           <p class="delivery-offerings">Community sessions &amp; venue classes</p>
           <div class="delivery-reach">
-            <strong>Service Area:</strong> Divine Life School (Vasna), Vaishnodevi Area, &amp; parks/societies across Ahmedabad &amp; Gandhinagar
+            <strong>Service Area:</strong> Divine Life School (Vasna), Vaishnodevi Area, &amp; parks/societies across
+            Ahmedabad &amp; Gandhinagar
           </div>
         </div>
 
@@ -3768,7 +3812,8 @@
               <strong>Headquarters/Venue Partner:</strong><br />
               Divine Life School, Vasna, Ahmedabad, Gujarat.<br /><br />
               <strong>Doorstep &amp; Group Service Areas:</strong><br />
-              PAN Ahmedabad &amp; Gandhinagar (including Vaishnodevi, Bodakdev, Satellite, SG Highway, Kudasan, Gift City).<br /><br />
+              PAN Ahmedabad &amp; Gandhinagar (including Vaishnodevi, Bodakdev, Satellite, SG Highway, Kudasan, Gift
+              City).<br /><br />
               <strong>Online Reach:</strong> Live Worldwide / International.
             </li>
           </ul>
@@ -3924,6 +3969,28 @@
        SERVICES DATA REGISTRY
     ============================================= */
     const SERVICES_DATA = {
+      'astro-yoga': {
+        title: 'Astro Yoga',
+        category: 'Heal & Restore',
+        isHighlighted: true,
+        iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 0-.67-3.4 6.75 6.75 0 0 1-7.93-7.93A9.75 9.75 0 0 0 12 3z" /><path d="M19 3v4M21 5h-4" /></svg>`,
+        shortDesc: 'Align your physical practice with cosmic rhythms and planetary energies. Customized sequences map transit patterns to your birth chart (Kundali).',
+        description: `<b>Astro Yoga:</b> Align your physical practice with cosmic rhythms and planetary energies.<br/><br/>Each session maps current astrological transits, lunar phases, and your birth chart (Kundali) to specific sequences that optimize energy flow, clear mental fog, and harness cosmic alignments.`,
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
+      },
+
+      'chakra-yoga': {
+        title: 'Chakra Yoga',
+        category: 'Heal & Restore',
+        isHighlighted: true,
+        iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /><path d="M12 2v20M2 12h20M5.5 5.5l13 13M18.5 5.5l-13 13" /></svg>`,
+        shortDesc: 'Balance your subtle energy centers to unlock vitality and mental clarity. Focuses on the seven primary chakras using asanas, visualization, and seed sound mantras.',
+        description: `<b>Chakra Yoga:</b> Balance your subtle energy centers to unlock vitality, emotional release, and spiritual alignment.<br/><br/>Focuses on the seven primary chakras along the spine using specific posture sequences, seed sound mantras (Bija), and color visualization to clear energy blockages.`,
+        days: ['Mon - Fri', 'Sat - Sun'],
+        timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
+      },
+
       'primary-ashtanga': {
         title: 'Primary Ashtanga Series',
         category: 'Sweat & Sculpt',
@@ -3943,13 +4010,12 @@
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
-
-      'vinyasa-flow': {
-        title: 'Dynamic Vinyasa Flow',
-        category: 'Sweat & Sculpt',
-        iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
-        shortDesc: 'Fluid movement synchronized with breath to cultivate cardiovascular stamina and agility. Seamless posture transitions build strength while maintaining a meditative focus.',
-        description: `<b>Dynamic Vinyasa Flow:</b> Experience a seamless blend of strength, balance, and rhythmic breath awareness. Dynamic Vinyasa links movement with breathing in a continuous flow, building core heat, expanding stamina, and enhancing body mobility.<br/><br/>Each class moves through creative pose sequences that energize the body while cultivating steady focus and mindfulness.`,
+      'corporate-desk': {
+        title: 'Corporate Yoga',
+        category: 'Life Stages & Corporate',
+        iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
+        shortDesc: 'Decompress from desk strain and counteract sedentary office posture. Focuses on relieving neck, shoulder, and lower back stiffness while boosting focus.',
+        description: `<b>Corporate Desk Relief:</b> Decompress from desk strain, forward head posture, and sedentary office habits.<br/><br/>Focuses on opening tight chest muscles, relieving neck and upper back stiffness, loosening hip flexors, and boosting mental focus during long working hours.`,
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
@@ -3999,11 +4065,11 @@
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
       'spine-joint': {
-        title: 'Spine & Joint Recovery',
+        title: 'Yoga for Children',
         category: 'Heal & Restore',
         iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
-        shortDesc: 'Targeted low-impact postures engineered to decompress spinal vertebrae and lubricate stiff joints. Relieves chronic back pain and restores alignment.',
-        description: `<b>Spine & Joint Recovery:</b> Targeted low-impact postures engineered to decompress spinal vertebrae, ease lower back compression, and lubricate stiff joints.<br/><br/>Restores posture alignment, releases trapped spinal nerves, and makes daily physical movement comfortable and effortless.`,
+        shortDesc: 'Fun, playful sequences designed to enhance flexibility, coordination, and concentration in growing children. Incorporates storytelling and movement.',
+        description: `<b>Yoga for Children:</b> Fun, playful sequences designed to enhance flexibility, coordination, and concentration in growing children.<br/><br/>Incorporates storytelling and movement games to build body awareness, emotional regulation, and healthy habits from a young age.`,
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
@@ -4016,12 +4082,12 @@
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
-      'corporate-desk': {
-        title: 'Corporate Desk Relief',
-        category: 'Life Stages & Corporate',
-        iconSvg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 6v6l4 2" /></svg>`,
-        shortDesc: 'Decompress from desk strain and counteract sedentary office posture. Focuses on relieving neck, shoulder, and lower back stiffness while boosting focus.',
-        description: `<b>Corporate Desk Relief:</b> Decompress from desk strain, forward head posture, and sedentary office habits.<br/><br/>Focuses on opening tight chest muscles, relieving neck and upper back stiffness, loosening hip flexors, and boosting mental focus during long working hours.`,
+      'vinyasa-flow': {
+        title: 'Dynamic Vinyasa Flow',
+        category: 'Sweat & Sculpt',
+        iconSvg: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>`,
+        shortDesc: 'Fluid movement synchronized with breath to cultivate cardiovascular stamina and agility. Seamless posture transitions build strength while maintaining a meditative focus.',
+        description: `<b>Dynamic Vinyasa Flow:</b> Experience a seamless blend of strength, balance, and rhythmic breath awareness. Dynamic Vinyasa links movement with breathing in a continuous flow, building core heat, expanding stamina, and enhancing body mobility.<br/><br/>Each class moves through creative pose sequences that energize the body while cultivating steady focus and mindfulness.`,
         days: ['Mon - Fri', 'Sat - Sun'],
         timings: ['5:00am-6:00am', '6:00am-7:00am', '7:00am-8:00am', '8:00am-9:00am', '5:00pm-6:00pm', '6:00pm-7:00pm', '8:00pm-9:00pm', '9:00pm-10:00pm']
       },
@@ -4085,12 +4151,16 @@
         });
 
         const card = document.createElement('div');
-        card.className = `service-card reveal ${isFeatured ? 'featured' : ''}`;
+        const highlightClass = item.isHighlighted ? 'highlighted' : '';
+        card.className = `service-card reveal ${isFeatured ? 'featured' : ''} ${highlightClass}`;
         card.setAttribute('data-category', slug);
         card.setAttribute('data-selected-day', 'Mon - Fri');
         card.id = `card-${key}`;
 
+        const badgeHtml = item.isHighlighted ? `<div class="mastery-badge">Mastery Practice</div>` : '';
+
         card.innerHTML = `
+          ${badgeHtml}
           <div class="service-card-icon">
             ${item.iconSvg}
           </div>
