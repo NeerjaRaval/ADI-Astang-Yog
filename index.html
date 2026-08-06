@@ -1125,52 +1125,34 @@
       color: rgba(246, 245, 240, 0.6);
     }
 
-    .card-day-options {
-      display: flex;
-      gap: 0.4rem;
+    .card-day-select {
       width: 100%;
-    }
-
-    .card-day-pill {
-      flex: 1;
-      padding: 0.45rem 0.2rem;
+      padding: 0.45rem 0.5rem;
       font-size: 0.65rem;
       font-weight: 700;
-      text-align: center;
       border-radius: var(--radius-sm);
       border: 1.5px solid rgba(171, 128, 58, 0.3);
-      background: transparent;
+      background: var(--clr-white);
       color: var(--clr-text);
       cursor: pointer;
+      outline: none;
       transition: var(--transition);
-      white-space: nowrap;
     }
 
-    .service-card.featured .card-day-pill {
+    .service-card.featured .card-day-select {
       border-color: rgba(246, 245, 240, 0.3);
+      background: var(--clr-dark-2);
       color: var(--clr-cream);
     }
 
-    .card-day-pill:hover {
+    .card-day-select:focus,
+    .card-day-select:hover {
       border-color: var(--clr-terracotta);
-      color: var(--clr-terracotta);
     }
 
-    .service-card.featured .card-day-pill:hover {
+    .service-card.featured .card-day-select:focus,
+    .service-card.featured .card-day-select:hover {
       border-color: var(--clr-amber);
-      color: var(--clr-amber);
-    }
-
-    .card-day-pill.selected {
-      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
-      border-color: transparent;
-      color: var(--clr-white);
-      box-shadow: 0 3px 10px rgba(156, 68, 25, 0.2);
-    }
-
-    .service-card.featured .card-day-pill.selected {
-      background: linear-gradient(135deg, var(--clr-amber), #e8880f);
-      box-shadow: 0 3px 10px rgba(219, 113, 27, 0.25);
     }
 
     .card-timing-selector {
@@ -1423,8 +1405,8 @@
     }
 
     .modal-desc-box {
-      height: 200px;
-      overflow: hidden; 
+      height: 280px;
+      overflow-y: auto;
       font-size: var(--fs-sm);
       color: var(--clr-text-muted);
       line-height: 1.8;
@@ -1434,34 +1416,47 @@
       border: 1px solid rgba(171, 128, 58, 0.18);
     }
 
-    .pill-group {
+    /* Modal day + time dropdowns side-by-side */
+    .modal-select-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-end;
     }
 
-    .select-pill {
-      padding: 0.55rem 1.3rem;
-      border-radius: var(--radius-pill);
-      font-size: var(--fs-xs);
+    .modal-select-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1;
+    }
+
+    .modal-select-label {
+      font-size: 0.68rem;
       font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+    }
+
+    .modal-select-field {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(171, 128, 58, 0.3);
       background: var(--clr-white);
-      border: 1.5px solid rgba(171, 128, 58, 0.25);
       color: var(--clr-text);
       cursor: pointer;
+      outline: none;
       transition: var(--transition);
+      appearance: auto;
     }
 
-    .select-pill:hover {
+    .modal-select-field:focus,
+    .modal-select-field:hover {
       border-color: var(--clr-terracotta);
-      color: var(--clr-terracotta);
-    }
-
-    .select-pill.selected {
-      background: linear-gradient(135deg, var(--clr-terracotta), var(--clr-amber));
-      border-color: transparent;
-      color: var(--clr-white);
-      box-shadow: 0 4px 15px rgba(156, 68, 25, 0.3);
     }
 
     .modal-footer-box {
@@ -3183,22 +3178,28 @@
 
       <div class="modal-body-content">
         <div>
-          <h4 class="modal-section-heading">Descriptions :</h4>
+          <h4 class="modal-section-heading">Description :</h4>
           <div class="modal-desc-box" id="modal-desc-box">
             Loading service description...
           </div>
         </div>
-        <div>
-          <h4 class="modal-section-heading">Select Days :</h4>
-          <div class="pill-group" id="modal-days-group">
-            <!-- Populated via JavaScript -->
-          </div>
-        </div>
 
-        <div>
-          <h4 class="modal-section-heading">Select Time :</h4>
-          <div class="pill-group" id="modal-time-group">
-            <!-- Populated via JavaScript -->
+        <!-- Day + Time dropdowns side by side -->
+        <div class="modal-select-row">
+          <div class="modal-select-col">
+            <label class="modal-select-label" for="modal-days-select">Select Days</label>
+            <div id="modal-days-group">
+              <select class="modal-select-field" id="modal-days-select">
+                <option value="Mon - Fri">Mon – Fri</option>
+                <option value="Sat - Sun">Sat – Sun</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-select-col">
+            <label class="modal-select-label" for="modal-time-select">Select Time</label>
+            <div id="modal-time-group">
+              <!-- Populated via JavaScript -->
+            </div>
           </div>
         </div>
       </div>
@@ -4114,13 +4115,10 @@
     };
 
     /* ----- Card Renderer ----- */
-    function selectCardDay(btnEl, day, serviceId) {
+    function selectCardDay(selectEl, serviceId) {
       const card = document.getElementById(`card-${serviceId}`);
       if (card) {
-        card.setAttribute('data-selected-day', day);
-        const buttons = card.querySelectorAll('.card-day-pill');
-        buttons.forEach(btn => btn.classList.remove('selected'));
-        btnEl.classList.add('selected');
+        card.setAttribute('data-selected-day', selectEl.value);
       }
     }
 
@@ -4181,12 +4179,12 @@
           <div class="card-selection-row">
             <div class="card-days-selector">
               <label class="card-input-label">Days</label>
-              <div class="card-day-options">
-                <button type="button" class="card-day-pill selected" onclick="selectCardDay(this, 'Mon - Fri', '${key}')">Mon - Fri</button>
-                <button type="button" class="card-day-pill" onclick="selectCardDay(this, 'Sat - Sun', '${key}')">Sat - Sun</button>
-              </div>
+              <select class="card-day-select" onchange="selectCardDay(this, '${key}')">
+                <option value="Mon - Fri">Mon – Fri</option>
+                <option value="Sat - Sun">Sat – Sun</option>
+              </select>
             </div>
-            
+
             <div class="card-timing-selector">
               <label class="card-input-label">Time</label>
               <select class="card-timing-select">
@@ -4223,29 +4221,19 @@
       document.getElementById('modal-category-badge').textContent = data.category;
       document.getElementById('modal-desc-box').innerHTML = data.description;
 
-      // Render Days as 2 pills: Mon-Fri / Sat-Sun
-      const daysGroup = document.getElementById('modal-days-group');
-      daysGroup.innerHTML = '';
+      // Days dropdown
+      const daysSel = document.getElementById('modal-days-select');
+      daysSel.value = 'Mon - Fri';
       currentSelectedDay = 'Mon - Fri';
-      ['Mon - Fri', 'Sat - Sun'].forEach((day, index) => {
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = `select-pill ${index === 0 ? 'selected' : ''}`;
-        pill.textContent = day;
-        pill.onclick = () => {
-          daysGroup.querySelectorAll('.select-pill').forEach(p => p.classList.remove('selected'));
-          pill.classList.add('selected');
-          currentSelectedDay = day;
-        };
-        daysGroup.appendChild(pill);
-      });
+      daysSel.onchange = () => { currentSelectedDay = daysSel.value; };
 
-      // Render Timings as a select dropdown
+      // Timings dropdown
       const timeGroup = document.getElementById('modal-time-group');
       timeGroup.innerHTML = '';
       currentSelectedTiming = data.timings[0] || '';
       const sel = document.createElement('select');
-      sel.style.cssText = 'width:100%;padding:0.55rem 0.75rem;font-size:var(--fs-sm);border-radius:var(--radius-sm);border:1.5px solid rgba(171,128,58,0.35);background:var(--clr-cream);color:var(--clr-text);outline:none;cursor:pointer;';
+      sel.className = 'modal-select-field';
+      sel.id = 'modal-time-select';
       data.timings.forEach((time, index) => {
         const opt = document.createElement('option');
         opt.value = time;
