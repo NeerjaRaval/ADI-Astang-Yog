@@ -961,18 +961,17 @@
       border-color: rgba(156, 68, 25, 0.25);
     }
 
-    /* Highlighted Mastery Card Styling — full-width banner row */
+    /* Highlighted Mastery Card Styling — wide side-by-side pair */
     .service-card.highlighted {
-      grid-column: 1 / -1;
       border: 1.8px solid var(--clr-gold);
       box-shadow: 0 6px 24px rgba(171, 128, 58, 0.14);
       background: linear-gradient(135deg, #fffdf8 0%, #fdf6e8 60%, #fffdf8 100%);
 
-      /* Horizontal layout inside the wide card */
+      /* Horizontal layout inside each card */
       flex-direction: row;
       align-items: center;
-      gap: 2.5rem;
-      padding: 2.4rem 2.8rem;
+      gap: 1.8rem;
+      padding: 2.2rem 2rem;
     }
 
     .service-card.highlighted .service-card-icon {
@@ -2437,10 +2436,6 @@
     @media (max-width: 1024px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .service-card.highlighted {
-        grid-column: 1 / -1;
       }
 
       .pricing-grid.three-col {
